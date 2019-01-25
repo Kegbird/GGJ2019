@@ -1,0 +1,9 @@
+image_speed = random_range(2, 3.5);
+speed = 0;
+direction = 0;
+rot_speed = random(5) * choose(-1,1);
+start_scale = random_range(0.9, 1.2);
+image_angle = random(360);
+image_index = choose(1,2);
+image_blend = choose(c_red, c_yellow, c_orange, c_white);
+t = random(3);
