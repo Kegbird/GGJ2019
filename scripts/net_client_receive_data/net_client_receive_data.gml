@@ -24,10 +24,7 @@ switch (cmd)
 	case Cmd.User:
 		msg_client_user();
 	break;
-	
-	case Cmd.Lobby:
-		msg_client_lobby();
-	break;
+	 
 	
 	default:
 		show_message("received cmd: " + string(cmd));

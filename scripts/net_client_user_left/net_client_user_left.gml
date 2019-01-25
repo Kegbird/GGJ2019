@@ -5,11 +5,11 @@ show_debug_message("User left, playerid: " + string(playerid));
 
 for(var i = 0; i < ds_list_size(player_list); i++)
 {
-	var car = player_list[| i];
-	if(car.playerid == playerid)
+	var player = player_list[| i];
+	if(player.playerid == playerid)
 	{
 		ds_list_delete(player_list, i); 
-		instance_destroy (car);
+		instance_destroy (player);
 		break;
 	}
 }

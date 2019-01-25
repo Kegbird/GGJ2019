@@ -10,8 +10,7 @@ enum Cmd
 	Rejected,
 	Joined,
 	Left,
-	User,
-	Lobby,
+	User, 
 }
 
 enum CmdUser
@@ -19,12 +18,7 @@ enum CmdUser
 	None,
 	Name, 
 }
-
-enum CmdLobby
-{
-	None,
-	Ready,
-}
+ 
 
 globalvar sendbuffer; 
 globalvar player_list; 

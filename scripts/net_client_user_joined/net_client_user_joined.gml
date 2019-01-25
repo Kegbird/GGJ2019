@@ -1,11 +1,9 @@
 var buff = argument0;
  
-var car = instance_create_depth(100, 100, 0, obj_car_other);
-car.playerid = buffer_read(buff, buffer_gameid); 
-ds_list_add(player_list, car);
+var player = instance_create_depth(100, 100, 0, obj_player_other);
+player.playerid = buffer_read(buff, buffer_gameid); 
+ds_list_add(player_list, player);
 
-show_debug_message("New User joined, playerid: " + string(car.playerid));
+show_debug_message("New User joined, playerid: " + string(player.playerid));
 
-
-if(instance_number(obj_lobby) > 0)
-	obj_lobby.lobby_time = 30;
+ 

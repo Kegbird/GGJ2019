@@ -9,11 +9,7 @@ switch (cmd)
 		show_debug_message("cmd user");
 		msg_host_user();
 	break;
-	
-	case Cmd.Lobby:
-		msg_host_lobby();
-	break;
-	
+	 
 	default:
 		show_message("host received cmd: " + string(cmd));
 	break;
