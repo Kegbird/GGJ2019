@@ -27,9 +27,9 @@ enum CmdLobby
 }
 
 globalvar sendbuffer; 
-globalvar car_list; 
+globalvar player_list; 
 sendbuffer = buffer_create(256, buffer_grow, 1); 
-car_list = ds_list_create();
+player_list = ds_list_create();
 
 #macro buffer_gameid buffer_s8
 #macro buffer_cmd buffer_u8

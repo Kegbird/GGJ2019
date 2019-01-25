@@ -1,5 +1,5 @@
 ready = false;
-gameid = -1;
+playerid = -1;
 username = "unknown";
 spd = 0;
 dir = 0;

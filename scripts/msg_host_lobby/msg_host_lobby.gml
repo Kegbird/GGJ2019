@@ -4,9 +4,9 @@ var cmd = buffer_read(buff, buffer_cmd);
 switch (cmd)
 {
 	case CmdLobby.Ready: 
-		var gameid = buffer_read(buff, buffer_gameid);
+		var playerid = buffer_read(buff, buffer_gameid);
 		
-		var car = find_car(gameid);
+		var car = find_car(playerid);
 		if(instance_exists(car))
 		{
 			if(car.sid != sid)
@@ -19,7 +19,7 @@ switch (cmd)
 			//send car ready change
 			write_begin(Cmd.Lobby);
 			buffer_write(sendbuffer, buffer_cmd, CmdLobby.Ready);
-			buffer_write(sendbuffer, buffer_gameid, car.gameid);
+			buffer_write(sendbuffer, buffer_gameid, car.playerid);
 			buffer_write(sendbuffer, buffer_gameid, car.ready);
 			net_host_send_all_except (sid);
 		}

@@ -1,9 +1,0 @@
-image_speed = random_range(0.7, 1);
-speed = 0;
-direction = 0;
-rot_speed = random(5) * choose(-1,1);
-start_scale = random_range(0.75, 1);
-image_angle = random(360);
-image_index = choose(1,2);
-image_blend = c_black;
-t = random(3);

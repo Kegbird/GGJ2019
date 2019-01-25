@@ -15,6 +15,6 @@ if(server < 0)
 
 show_debug_message("server: " + string(server));
 var car = instance_create_depth(100, 100, 0, obj_car);
-car.gameid = -2;
+car.playerid = -2;
 room_goto(room_lobby);
 	 

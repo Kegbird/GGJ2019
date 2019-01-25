@@ -1,14 +1,14 @@
 var buff = argument0;
 
-var gameid = buffer_read(buff, buffer_gameid);
-show_debug_message("User left, gameid: " + string(gameid));
+var playerid = buffer_read(buff, buffer_gameid);
+show_debug_message("User left, playerid: " + string(playerid));
 
-for(var i = 0; i < ds_list_size(car_list); i++)
+for(var i = 0; i < ds_list_size(player_list); i++)
 {
-	var car = car_list[| i];
-	if(car.gameid == gameid)
+	var car = player_list[| i];
+	if(car.playerid == playerid)
 	{
-		ds_list_delete(car_list, i); 
+		ds_list_delete(player_list, i); 
 		instance_destroy (car);
 		break;
 	}

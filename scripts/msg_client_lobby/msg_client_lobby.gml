@@ -3,8 +3,8 @@ var cmd = buffer_read(buff, buffer_cmd);
 switch (cmd)
 {
 	case CmdLobby.Ready: 
-		var gameid = buffer_read(buff, buffer_gameid);
-		var car = find_car(gameid);
+		var playerid = buffer_read(buff, buffer_gameid);
+		var car = find_car(playerid);
 		if(instance_exists(car)) 
 			car.ready = buffer_read(buff, buffer_bool);	 
 		else
