@@ -16,8 +16,8 @@ switch (cmd)
 		var size = buffer_read(buff, buffer_u8);
 		for (var i = 0; i < size; i++)
 		{
-			show_debug_message(i);
-			var playerid = buffer_read(buff, buffer_gameid); 
+			var playerid = buffer_read(buff, buffer_gameid);
+			show_debug_message("Velocity change for: " + string(playerid));
 			var xSpd = buffer_read(buff, buffer_f32);
 			var ySpd = buffer_read(buff, buffer_f32);
 			var player = player_map[? playerid];
@@ -30,7 +30,30 @@ switch (cmd)
 		 
 	break;
 	
+	case CmdPlayerUpdate.Sync:		// Megapack
+		
+		var size = buffer_read(buff, buffer_u8);
+		for (var i = 0; i < size; i++)
+		{
+			var playerid = buffer_read(buff, buffer_gameid);
+			var vis = buffer_read(buff, buffer_u8);
+			var x_coord = buffer_read(buff, buffer_u16);
+			var y_coord = buffer_read(buff, buffer_u16);
+			var xSpd = buffer_read(buff, buffer_f32);
+			var ySpd = buffer_read(buff, buffer_f32);
+			if (playerid != obj_player.playerid) {
+				var player = instance_create_depth(0, 0, 0, obj_player_other);
+				player.playerid = playerid;
+				player.visible = vis;
+				player.x = x_coord;
+				player.y = y_coord;
+				player.xSpd = xSpd;
+				player.ySpd = ySpd;
+			}
+		}
+	break;
+	
 	default:
-		show_message("received cmd: " + string(cmd));
+		show_message("msg_client_user received cmd: " + string(cmd));
 	break;
 }

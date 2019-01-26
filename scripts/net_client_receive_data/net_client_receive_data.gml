@@ -24,7 +24,6 @@ switch (cmd)
 	case Cmd.PlayerUpdate:
 		msg_client_user();
 	break;
-	 
 	
 	default:
 		show_message("received cmd: " + string(cmd));

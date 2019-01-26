@@ -20,6 +20,22 @@ if(ds_list_size(player_list) < max_players)
 	write_begin(Cmd.Joined);
 	buffer_write(sendbuffer, buffer_gameid, player.playerid);
 	net_host_send_all_except(sock);
+	
+	// Sync new user
+	write_begin(Cmd.PlayerUpdate);
+	buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.Sync);
+	var size = ds_list_size(player_list);
+	buffer_write(sendbuffer, buffer_u8, size);
+	// Add all players coordinates
+	for (var i = 0; i < size; i++) {
+		buffer_write(sendbuffer, buffer_gameid, player_list[| i].playerid);
+		buffer_write(sendbuffer, buffer_u8, player_list[| i].visible);
+		buffer_write(sendbuffer, buffer_u16, floor(player_list[| i].x));
+		buffer_write(sendbuffer, buffer_u16, floor(player_list[| i].y));
+		buffer_write(sendbuffer, buffer_f32, player_list[| i].old_xspd);
+		buffer_write(sendbuffer, buffer_f32, player_list[| i].old_yspd);
+	}
+	net_host_send(sock);
 	 
 	
 }
