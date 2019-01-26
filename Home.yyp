@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "227cb92f-6cf3-4dc6-b78e-c8be250989d5",
+            "Value": {
+                "id": "9904beac-84dd-4cce-aa8a-70062277b7d0",
+                "resourcePath": "scripts\\scr_get_spawnpoint\\scr_get_spawnpoint.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "266d4087-e377-47dc-a83d-833198217f40",
             "Value": {
                 "id": "17beac5e-f868-4181-917a-88bd842c9fd9",
@@ -1032,6 +1040,7 @@
         "d06492ff-e433-4256-b60f-4cef17c16821",
         "90835169-cc69-4835-8ef7-9d9e594641d4",
         "885763f9-15dd-404d-b061-d3c64af29692",
+        "227cb92f-6cf3-4dc6-b78e-c8be250989d5",
         "fdc7d427-24b5-445d-bc94-23d43f3970e9"
     ],
     "tutorial": ""

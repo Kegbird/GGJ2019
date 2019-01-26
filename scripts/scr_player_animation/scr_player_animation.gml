@@ -1,8 +1,15 @@
-// args:  speed
+// args:  speed, spr
 
-var spd = argument0;
+var spd = argument[0];
 
-sprite_index = spr_player;
+if (argument_count == 1) {
+	sprite_index = spr_player;
+}
+else {
+	sprite_index = argument[1];
+}
+
+
 if (mouse_x > x) image_xscale = -1; else image_xscale = 1;
 
 if (abs(spd) > 0) {
