@@ -33,8 +33,11 @@ enum CmdPlayerUpdate
 	LeftVehicle,
 	Damage
 }
+
  
 
+
+  
 globalvar sendbuffer; 
 globalvar player_list; 
 sendbuffer = buffer_create(256, buffer_grow, 1); 

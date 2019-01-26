@@ -25,6 +25,19 @@ switch (cmd)
 		}
 		else
 			show_message("host: can't find player");
+
+	break;
+
+	case CmdPlayerRequest.Input: 
+		//W,A,S,D,E,MOUSE
+		var w = buffer_read(buff, buffer_s8);
+		var a = buffer_read(buff, buffer_s8);
+		var s = buffer_read(buff, buffer_s8);
+		var d = buffer_read(buff, buffer_s8);
+		var e = buffer_read(buff, buffer_s8);
+		var m = buffer_read(buff, buffer_s8);
+		var mx = buffer_read(buff, buffer_u16);
+		var my = buffer_read(buff, buffer_u16);
 	break;
 	
 	default:
