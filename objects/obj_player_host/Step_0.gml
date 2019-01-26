@@ -37,7 +37,6 @@ if (active) {
 	x += xSpd;
 	y += ySpd;
 	
-	scr_player_animation(spd, dir);
 	
 	///FAI FUOCO
 	if (k_fire && delay <= 0) {
