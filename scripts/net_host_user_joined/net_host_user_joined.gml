@@ -7,10 +7,11 @@ if(ds_list_size(player_list) < max_players)
 	show_debug_message("added " + string(sock) + " | id " + string(async_load[? "id"]));
 	ds_list_add(socket_list, sock);
 	
-	var player = instance_create_depth(100, 100, 0, obj_player_other);
+	var player = instance_create_depth(100, 100, 0, obj_player_host);
 	player.playerid = players_game_id++;
 	player.sid = sock;
 	ds_list_add(player_list, player);
+	player_map[? player.playerid] = player;
 	
 	write_begin(Cmd.Accepted);
 	buffer_write(sendbuffer, buffer_gameid, player.playerid);
