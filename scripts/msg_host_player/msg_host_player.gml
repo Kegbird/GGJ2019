@@ -28,9 +28,6 @@ switch (cmd)
 
 	break;
 
-	write_begin(Cmd.PlayerRequest);
-	buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);
-	
 	
 	case CmdPlayerRequest.Input: 
 	
