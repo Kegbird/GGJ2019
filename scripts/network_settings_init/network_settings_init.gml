@@ -27,9 +27,9 @@ enum CmdPlayerUpdate
 {
 	None,
 	Name,
-	Position,
-	Velocity,
-	TakeVehicle,
+	Position, //send the position of all the players 
+	Velocity, //send the velocity change (spd, dir) of each player
+	TakeVehicle, 
 	LeftVehicle,
 	Damage
 }
