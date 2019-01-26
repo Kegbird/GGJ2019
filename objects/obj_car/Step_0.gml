@@ -53,12 +53,6 @@ if (active) {
 	speed = (spd - abs(bounce));
 	
 	if (bounce != 0) bounce = lerp(bounce, 0, 0.5);
-	
-	if (old_xspd != xSpd || old_yspd != ySpd) 
-		ds_queue_enqueue(queue_velocity_change, id);
-	
-	old_xspd = xSpd;
-	old_yspd = ySpd;
 
 
 	if (type == 1) {
