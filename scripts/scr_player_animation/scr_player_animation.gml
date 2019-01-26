@@ -10,7 +10,7 @@ else {
 }
 
 
-if (mouse_x > x) image_xscale = -1; else image_xscale = 1;
+if (window_mouse_get_x() > window_get_width() * 0.5) image_xscale = -1; else image_xscale = 1;
 
 if (abs(spd) > 0) {
 	image_speed = 1;

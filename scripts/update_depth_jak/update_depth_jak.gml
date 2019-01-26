@@ -1,0 +1,1 @@
+if (instance_exists(obj_player)) depth = -2000 + ((obj_player.x - x) + (obj_player.y - y));

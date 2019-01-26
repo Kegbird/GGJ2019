@@ -14,3 +14,4 @@ delay = 0;
 delay_cooldown = 0.25;
 delay_max = 5;
 
+position_set = false;

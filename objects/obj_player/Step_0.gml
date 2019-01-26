@@ -1,7 +1,7 @@
 if (active) {
 	mouse_dir = point_direction(x,y,mouse_x,mouse_y);
 
-	var xSpd = 0, ySpd = 0;
+	var xSpd = 0, ySpd = 0, yCor = 0, xCor = 0;
 
 	if (delay > 0)
 		delay -= delay_cooldown;
@@ -10,27 +10,32 @@ if (active) {
 	#region KEYBOARD
 	if (keyboard_check(global.k_right) && !instance_position(x + velocity, y, obj_solid)) {
 		xSpd += velocity;
+		yCor -= velocity;
 	}
 
 	if (keyboard_check(global.k_left) && !instance_position(x - velocity, y, obj_solid)) {
 		xSpd -= velocity;
+		yCor += velocity;
 	}
 
 	if (keyboard_check(global.k_up) && !instance_position(x, y - velocity, obj_solid)) {
 		ySpd -= velocity;
+		xCor -= velocity;
 	}
 
 	if (keyboard_check(global.k_down) && !instance_position(x, y + velocity, obj_solid)) {
 		ySpd += velocity;
+		xCor += velocity;
 	}
 	#endregion
 	
-
-	spd = point_distance(x, y, x + xSpd, y + ySpd);
-	dir = point_direction(x, y, x + xSpd, y + ySpd);
+	var xFinal = (xSpd + xCor) * 0.5, yFinal = (ySpd + yCor) * 0.5;
 	
-	x += xSpd;
-	y += ySpd;
+	spd = point_distance(x, y, x + xFinal, y + yFinal);
+	dir = point_direction(x, y, x + xFinal, y + yFinal);
+	
+	x += xFinal;
+	y += yFinal;
 	
 	scr_player_animation(spd);
 	
@@ -50,6 +55,7 @@ if (active) {
 			target.active = true;
 		}
 	}
+	
 } 
 else {
 	x = target.x;
@@ -62,6 +68,9 @@ else {
 		target = id;
 	}
 }
+
+update_depth_jak();
+
 
 write_begin(Cmd.PlayerRequest);
 buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);

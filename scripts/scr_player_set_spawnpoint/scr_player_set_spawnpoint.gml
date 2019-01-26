@@ -18,4 +18,5 @@ while (instance_place(xx, yy, obj_player_other)) {
 	}
 }
 
-return [xx, yy];
+x = xx;
+y = yy;

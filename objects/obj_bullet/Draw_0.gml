@@ -1,0 +1,1 @@
+draw_sprite_jak(-8)

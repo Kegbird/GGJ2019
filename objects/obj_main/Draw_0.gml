@@ -5,5 +5,6 @@ if(button_pressed(spr_button, 10, 10, 1, 1, "client"))
 
 if(button_pressed(spr_button, 10, 50, 1, 1, "host"))
 {	
+	global.server = true;
 	instance_create_depth(0, 0, 0, obj_host); 
 }
