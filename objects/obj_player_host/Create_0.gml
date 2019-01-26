@@ -26,6 +26,7 @@ delay_max = 5;
 dir = 0;
 spd = 0;
 
+position_set = false;
 
 old_xspd = 0;
 old_yspd = 0;
