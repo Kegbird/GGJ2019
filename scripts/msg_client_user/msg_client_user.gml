@@ -55,6 +55,26 @@ switch (cmd)
 		}
 	break;
 	
+	case CmdPlayerUpdate.Position:
+		var size = buffer_read(buff, buffer_u8);
+		for (var i = 0; i < size; i++)
+		{
+			var playerid = buffer_read(buff, buffer_gameid);
+			var x_coord = buffer_read(buff, buffer_u16);
+			var y_coord = buffer_read(buff, buffer_u16);
+			if (playerid == obj_player.playerid) {
+				obj_player.x = x_coord;
+				obj_player.y = y_coord;
+			}
+			else
+			{
+				player_map[? playerid].x = x_coord;
+				player_map[? playerid].y = y_coord;
+			}
+		}
+		
+	break;
+	
 	default:
 		show_message("msg_client_user received cmd: " + string(cmd));
 	break;

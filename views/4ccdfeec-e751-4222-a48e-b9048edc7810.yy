@@ -11,7 +11,8 @@
         "ecae1b3b-de4b-4f1e-bdc2-a2d03ecac7c9",
         "5e9c08b9-ca03-414c-930f-52c9dddc1d72",
         "ecbd3777-915f-42a1-b68a-9008b3cee0b4",
-        "ac7f117e-fb40-434e-b878-860baa637260"
+        "ac7f117e-fb40-434e-b878-860baa637260",
+        "ef0d4e1c-fded-4e3f-a233-12db9df3f32f"
     ],
     "filterType": "GMScript",
     "folderName": "host",
