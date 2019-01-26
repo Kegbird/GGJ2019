@@ -31,11 +31,12 @@ if (active) {
 	#endregion
  
 
-	//spd = point_distance(x, y, x + xSpd, y + ySpd);
+	spd = point_distance(x, y, x + xSpd, y + ySpd);
 	dir = point_direction(x, y, x + xSpd, y + ySpd);
 	
 	x += xSpd;
 	y += ySpd;
+	
 	
 	///FAI FUOCO
 	if (k_fire && delay <= 0) {
