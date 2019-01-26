@@ -1,5 +1,5 @@
 
-image_speed = 0;
+image_speed = 1;
 image_index = 0;
 direction = irandom_range(0,359);
 
@@ -18,5 +18,7 @@ ftimes_max = 3;
 
 anim_idle = spr_mob_ciccino_idle;
 anim_walk = spr_mob_ciccino_walk;
-anim_shoot = spr_mob_ciccino_hit;
+anim_hit = spr_mob_ciccino_hit;
 bullet = obj_mob_bullet_01;
+
+sprite_index = anim_walk;
