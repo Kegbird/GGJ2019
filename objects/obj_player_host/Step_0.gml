@@ -53,6 +53,12 @@ if (active) {
 			target.active = true;
 		}
 	}
+	
+	if (old_xspd != xSpd || old_yspd != ySpd) 
+		ds_queue_enqueue(queue_velocity_change, id);
+	
+	old_xspd = xSpd;
+	old_yspd = ySpd;
 } 
 else {
 	x = target.x;
@@ -66,8 +72,3 @@ else {
 	}
 }
  
-if (old_xspd != xSpd || old_yspd != ySpd) 
-	ds_queue_enqueue(queue_velocity_change, id);
-	
-old_xspd = xSpd;
-old_yspd = ySpd;

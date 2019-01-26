@@ -16,12 +16,15 @@ switch (cmd)
 		var size = buffer_read(buff, buffer_u8);
 		for (var i = 0; i < size; i++)
 		{
-			var playerid = buffer_read(buff, buffer_gameid);
+			show_debug_message(i);
+			var playerid = buffer_read(buff, buffer_gameid); 
+			var xSpd = buffer_read(buff, buffer_f32);
+			var ySpd = buffer_read(buff, buffer_f32);
 			var player = player_map[? playerid];
-			if(instance_exists(player)) 
+			if (player != undefined && instance_exists(player)) 
 			{ 
-				player.xSpd = buffer_read(buff, buffer_f16);
-				player.ySpd = buffer_read(buff, buffer_f16);
+				player.xSpd = xSpd;
+				player.ySpd = ySpd;
 			}
 		}
 		 
