@@ -75,9 +75,9 @@ else {
 	}
 }
 
-
 write_begin(Cmd.PlayerRequest);
 buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);
+buffer_write(sendbuffer, buffer_gameid, playerid);
 
 buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_up) ? 1 : (keyboard_check_released(global.k_up) ? -1 : 0));
 buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_left) ? 1 : (keyboard_check_released(global.k_left) ? -1 : 0));
