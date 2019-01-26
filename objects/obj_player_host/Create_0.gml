@@ -23,6 +23,8 @@ velocity = 3;
 delay = 0;
 delay_cooldown = 0.25;
 delay_max = 5;
+dir = 0;
+spd = 0;
 
 
 old_xspd = 0;

@@ -15,7 +15,7 @@ pDist = 200;
 ftimes = 0;
 ftimes_max = 3;
 
-anim_idle = sprite_index;
-anim_walk = sprite_index;
-anim_shoot = sprite_index;
+anim_idle = spr_mob_serio_idle;
+anim_walk = spr_mob_serio_walk;
+anim_shoot = spr_mob_serio_hit;
 bullet = obj_mob_bullet_01;

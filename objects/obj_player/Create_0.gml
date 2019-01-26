@@ -8,6 +8,7 @@ username = "unknown";
 active = true;
 target = id;
 velocity = 3;
+spd = 0;
 dir = 0;
 delay = 0;
 delay_cooldown = 0.25;

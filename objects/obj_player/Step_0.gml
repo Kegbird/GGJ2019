@@ -1,6 +1,5 @@
 if (active) {
 	mouse_dir = point_direction(x,y,mouse_x,mouse_y);
-	if (mouse_x > x) image_xscale = -1; else image_xscale = 1;
 
 	var xSpd = 0, ySpd = 0;
 
@@ -9,42 +8,31 @@ if (active) {
 
 	///MOVIMENTO
 	#region KEYBOARD
-	var moving = false;
-	
 	if (keyboard_check(global.k_right) && !instance_position(x + velocity, y, obj_solid)) {
 		xSpd += velocity;
-		moving = true;
 	}
 
 	if (keyboard_check(global.k_left) && !instance_position(x - velocity, y, obj_solid)) {
 		xSpd -= velocity;
-		moving = true;
 	}
 
 	if (keyboard_check(global.k_up) && !instance_position(x, y - velocity, obj_solid)) {
 		ySpd -= velocity;
-		moving = true;
 	}
 
 	if (keyboard_check(global.k_down) && !instance_position(x, y + velocity, obj_solid)) {
 		ySpd += velocity;
-		moving = true;
 	}
 	#endregion
 	
-	if (!moving) {
-		image_speed = 1;
-	}  
-	else {
-		image_speed = 0; 
-		image_index = 0;
-	}
 
-	//spd = point_distance(x, y, x + xSpd, y + ySpd);
+	spd = point_distance(x, y, x + xSpd, y + ySpd);
 	dir = point_direction(x, y, x + xSpd, y + ySpd);
 	
 	x += xSpd;
 	y += ySpd;
+	
+	scr_player_animation(spd);
 	
 	///FAI FUOCO
 	if (mouse_check_button(global.k_fire) && delay <= 0) {
