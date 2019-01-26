@@ -2,7 +2,7 @@ var buff = async_load[? "buffer"];
 var cmd = buffer_read(buff, buffer_cmd);
 switch (cmd)
 {
-	case CmdUser.Name: 
+	case CmdPlayerUpdate.Name: 
 		var playerid = buffer_read(buff, buffer_gameid);
 		var player = find_player(playerid);
 		if(instance_exists(player)) 

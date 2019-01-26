@@ -10,10 +10,20 @@ enum Cmd
 	Rejected,
 	Joined,
 	Left,
-	Player,
+	PlayerRequest,
+	PlayerUpdate
 }
 
-enum CmdUser
+// From client to server
+enum CmdPlayerRequest
+{
+	None,
+	Name,
+	Input
+}
+
+// Data update sent from server to client 
+enum CmdPlayerUpdate
 {
 	None,
 	Name,
@@ -21,7 +31,7 @@ enum CmdUser
 	Velocity,
 	TakeVehicle,
 	LeftVehicle,
-	
+	Damage
 }
  
 

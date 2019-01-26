@@ -434,7 +434,7 @@
             "Key": "ac7f117e-fb40-434e-b878-860baa637260",
             "Value": {
                 "id": "f0b84105-6ab3-43f0-b291-2bb7495ab148",
-                "resourcePath": "scripts\\msg_host_user\\msg_host_user.yy",
+                "resourcePath": "scripts\\msg_host_player\\msg_host_player.yy",
                 "resourceType": "GMScript"
             }
         },
