@@ -1,5 +1,5 @@
 ini_open("settings.ini");
-global.ip = ini_read_string("net", "ip", " 192.168.43.59");
+global.ip = ini_read_string("net", "ip", "127.0.0.1"); // 192.168.43.59
 global.port = ini_read_real("net", "port", 10000);
 
 
