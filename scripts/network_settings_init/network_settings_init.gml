@@ -11,7 +11,8 @@ enum Cmd
 	Joined,
 	Left,
 	PlayerRequest,
-	PlayerUpdate
+	PlayerUpdate,
+	Mob
 }
 
 // From client to server
@@ -36,9 +37,19 @@ enum CmdPlayerUpdate
 	Damage
 }
   
+enum CmdMob {
+	None,
+	Spawn
+}
+  
 globalvar sendbuffer;
 globalvar player_list;
 globalvar player_map;
+
+globalvar mob_list;
+globalvar mob_map;
+globalvar mob_next_id;
+globalvar mobtype;
 
 globalvar queue_damage_mob;
 globalvar queue_velocity_change;
@@ -46,6 +57,11 @@ globalvar queue_velocity_change;
 sendbuffer = buffer_create(256, buffer_grow, 1); 
 player_list = ds_list_create();
 player_map = ds_map_create();
+
+mob_list = ds_list_create();
+mob_map = ds_map_create();
+mob_next_id = 0;
+mobtype[0] = obj_mob_ciccino_host;
 
 #macro buffer_gameid buffer_s8
 #macro buffer_cmd buffer_u8

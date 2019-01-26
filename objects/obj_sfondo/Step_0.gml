@@ -18,7 +18,7 @@ mtx_view = mat4_rotate_x(mtx_view, -90+global.world_angle);
 //mtx_view = matrix_multiply(mat4_set_translation(-obj_player.x, -obj_player.y, 300), mtx_view);
 mtx_view = matrix_multiply(mat4_set_translation(-obj_player.x, -obj_player.y, sqrt(global.cam_distance*global.cam_distance*2) * dcos(global.world_angle)), mtx_view);
 
-var mtx_proj = mat4_perspective(degtorad(30), 1024/756, 0.1, 4000)
+var mtx_proj = mat4_perspective(degtorad(30), window_get_width()/window_get_height(), 0.1, 4000)
 
 camera_set_view_mat(view_camera[0], mtx_view);
 camera_set_proj_mat(view_camera[0], mtx_proj);

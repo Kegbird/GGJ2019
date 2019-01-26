@@ -1,3 +1,5 @@
+mobid = -1;
+type = -1;
 
 image_speed = 1;
 image_index = 0;
