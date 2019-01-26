@@ -5,8 +5,7 @@ s = 0;
 d = 0;
 e = 0;
 m = 0;
-mx = 0;
-my = 0; 
+ma = 0;
 
 k_right = false;
 k_up = false;
