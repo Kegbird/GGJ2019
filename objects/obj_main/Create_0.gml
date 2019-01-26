@@ -10,5 +10,5 @@ global.k_right = ord("D");
 global.k_up = ord("W");
 global.k_down = ord("S");
 
-global.k_fire = 0;
-global.k_action = 1;
+global.k_fire = mb_left;
+global.k_action = ord("E");
