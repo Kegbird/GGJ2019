@@ -6,7 +6,7 @@ switch (cmd)
 	case CmdPlayerRequest.Name: 
 		var playerid = buffer_read(buff, buffer_gameid);
 		
-		var player = find_player(playerid);
+		var player = player_map[? playerid];
 		if(instance_exists(player))
 		{
 			if(player.sid != sid)
@@ -25,6 +25,25 @@ switch (cmd)
 		}
 		else
 			show_message("host: can't find player");
+
+	break;
+
+	
+	case CmdPlayerRequest.Input: 
+	
+		var playerid = buffer_read(buff, buffer_gameid); 
+		var player = player_map[? playerid];
+		
+		//W,A,S,D,E,MOUSE
+		player.w = buffer_read(buff, buffer_s8);
+		player.a = buffer_read(buff, buffer_s8);
+		player.s = buffer_read(buff, buffer_s8);
+		player.d = buffer_read(buff, buffer_s8);
+		player.e = buffer_read(buff, buffer_s8);
+		player.m = buffer_read(buff, buffer_s8);
+		player.ma = buffer_read(buff, buffer_u16); 
+		
+		
 	break;
 	
 	default:
