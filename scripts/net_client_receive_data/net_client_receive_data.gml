@@ -21,7 +21,7 @@ switch (cmd)
 		net_client_user_left(buff);
 	break;
 	
-	case Cmd.User:
+	case Cmd.Player:
 		msg_client_user();
 	break;
 	 

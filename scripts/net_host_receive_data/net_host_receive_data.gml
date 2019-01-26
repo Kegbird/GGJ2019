@@ -5,7 +5,7 @@ var buff = async_load[? "buffer"];
 var cmd = buffer_read(buff, buffer_cmd);
 switch (cmd)
 { 
-	case Cmd.User:
+	case Cmd.Player:
 		show_debug_message("cmd user");
 		msg_host_user();
 	break;

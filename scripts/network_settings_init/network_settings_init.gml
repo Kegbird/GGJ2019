@@ -3,20 +3,25 @@ global.ip = ini_read_string("net", "ip", "127.0.0.1");
 global.port = ini_read_real("net", "port", 6510);
 
 
-enum Cmd 
+enum Cmd
 {
 	None,
 	Accepted,
 	Rejected,
 	Joined,
 	Left,
-	User, 
+	Player,
 }
 
 enum CmdUser
 {
 	None,
-	Name, 
+	Name,
+	Position,
+	Velocity,
+	TakeVehicle,
+	LeftVehicle,
+	
 }
  
 

@@ -17,7 +17,7 @@ switch (cmd)
 			player.username = buffer_read(buff, buffer_string);
 			
 			//send username change
-			write_begin(Cmd.User);
+			write_begin(Cmd.Player);
 			buffer_write(sendbuffer, buffer_cmd, CmdUser.Name);
 			buffer_write(sendbuffer, buffer_gameid, player.playerid);
 			buffer_write(sendbuffer, buffer_string, player.username);
