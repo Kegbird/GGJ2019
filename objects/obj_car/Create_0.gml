@@ -1,5 +1,6 @@
 active = false;
 type = 1;
+direction = irandom(359);
 
 xSpd = 0;
 ySpd = 0;
