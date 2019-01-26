@@ -8,7 +8,7 @@
         "17a8bd21-f588-47c7-80bc-858e0a1b9204"
     ],
     "filterType": "GMObject",
-    "folderName": "server",
+    "folderName": "Server",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

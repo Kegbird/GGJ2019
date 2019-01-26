@@ -1,5 +1,5 @@
 if (active) {
-	direction = point_direction(x,y,mouse_x,mouse_y);
+	mouse_dir = point_direction(x,y,mouse_x,mouse_y);
 	if (mouse_x > x) image_xscale = -1; else image_xscale = 1;
 
 	var xSpd = 0, ySpd = 0;
@@ -50,7 +50,7 @@ if (active) {
 	if (mouse_check_button(global.k_fire) && delay <= 0) {
 		delay = delay_max;
 		var b = instance_create_layer(x, y, "Instances", obj_bull);	
-		b.direction = direction;
+		b.direction = mouse_dir;
 	}
 
 	///ENTRA NELLE VETTURE
@@ -84,8 +84,8 @@ buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_left) ? 1 : 
 buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_down) ? 1 : (keyboard_check_released(global.k_down) ? -1 : 0));
 buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_right) ? 1 : (keyboard_check_released(global.k_right) ? -1 : 0));
 buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_action) ? 1 : (keyboard_check_released(global.k_action) ? -1 : 0));
-buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_fire) ? 1 : (keyboard_check_released(global.k_fire) ? -1 : 0));
-buffer_write(sendbuffer, buffer_u16, round(dir));
+buffer_write(sendbuffer, buffer_s8, mouse_check_button_pressed(global.k_fire) ? 1 : (mouse_check_button_released(global.k_fire) ? -1 : 0));
+buffer_write(sendbuffer, buffer_u16, floor(mouse_dir));
 
 
 net_client_send();

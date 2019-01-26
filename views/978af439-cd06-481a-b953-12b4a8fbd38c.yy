@@ -6,7 +6,8 @@
     "children": [
         "c9f1fcec-98cd-4e9b-987a-846b30abe006",
         "4ccdfeec-e751-4222-a48e-b9048edc7810",
-        "aac308c9-29d4-4524-847f-41344075bea6"
+        "aac308c9-29d4-4524-847f-41344075bea6",
+        "b6812b46-54ff-4710-9621-e6aceab92f24"
     ],
     "filterType": "GMScript",
     "folderName": "net",

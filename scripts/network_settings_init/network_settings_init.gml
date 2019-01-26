@@ -33,16 +33,13 @@ enum CmdPlayerUpdate
 	LeftVehicle,
 	Damage
 }
-
- 
-
-
   
-globalvar sendbuffer; 
-globalvar player_list; 
+globalvar sendbuffer;
+globalvar player_list;
 globalvar player_map;
 
 globalvar queue_damage_mob;
+globalvar queue_velocity_change;
 
 sendbuffer = buffer_create(256, buffer_grow, 1); 
 player_list = ds_list_create();
@@ -52,3 +49,4 @@ player_map = ds_map_create();
 #macro buffer_cmd buffer_u8
 
 queue_damage_mob = ds_queue_create();
+queue_velocity_change = ds_queue_create();

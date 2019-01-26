@@ -1,11 +1,6 @@
-// Got from client
-w = 0;
-a = 0;
-s = 0;
-d = 0;
-e = 0;
-m = 0;
-ma = 0;
+playerid = -1;
+sockid = -1;
+username = "unknown";
 
 k_right = false;
 k_up = false;
@@ -13,6 +8,7 @@ k_left = false;
 k_down = false;
 k_fire = false;
 k_action = false;
+fire_dir = 0;
 
 enum Key {
 	Released = -1,
@@ -27,3 +23,7 @@ velocity = 3;
 delay = 0;
 delay_cooldown = 0.25;
 delay_max = 5;
+
+
+old_xspd = 0;
+old_yspd = 0;

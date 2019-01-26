@@ -1,4 +1,3 @@
-ready = false;
 playerid = -1;
 sockid = -1;
 username = "unknown";

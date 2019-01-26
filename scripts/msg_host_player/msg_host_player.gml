@@ -34,15 +34,26 @@ switch (cmd)
 		var playerid = buffer_read(buff, buffer_gameid); 
 		var player = player_map[? playerid];
 		
-		//W,A,S,D,E,MOUSE
-		player.w = buffer_read(buff, buffer_s8);
-		player.a = buffer_read(buff, buffer_s8);
-		player.s = buffer_read(buff, buffer_s8);
-		player.d = buffer_read(buff, buffer_s8);
-		player.e = buffer_read(buff, buffer_s8);
-		player.m = buffer_read(buff, buffer_s8);
-		player.ma = buffer_read(buff, buffer_u16); 
+		with(player) 
+		{
+			//W,A,S,D,E,MOUSE
+			var w = buffer_read(buff, buffer_s8);
+			var a = buffer_read(buff, buffer_s8);
+			var s = buffer_read(buff, buffer_s8);
+			var d = buffer_read(buff, buffer_s8);
+			var e = buffer_read(buff, buffer_s8);
+			var m = buffer_read(buff, buffer_s8);
+			var ma = buffer_read(buff, buffer_u16); 
 		
+		
+			k_up = w == Key.Idle ? k_up : (w == Key.Pressed ? true : false);
+			k_left = a == Key.Idle ? k_left : (a == Key.Pressed ? true : false);
+			k_right = d == Key.Idle ? k_right : (d == Key.Pressed ? true : false);
+			k_down = s == Key.Idle ? k_down : (s == Key.Pressed ? true : false);
+			k_fire = m == Key.Idle ? k_fire : (m == Key.Pressed ? true : false); 
+			k_action = e == Key.Idle ? k_action : (e == Key.Pressed ? true : false);
+			fire_dir = ma;
+		}
 		
 	break;
 	
