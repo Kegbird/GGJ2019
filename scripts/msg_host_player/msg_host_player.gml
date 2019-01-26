@@ -29,15 +29,21 @@ switch (cmd)
 	break;
 
 	case CmdPlayerRequest.Input: 
+	
+		var playerid = buffer_read(buff, buffer_gameid); 
+		var player = player_map[? playerid];
+		
 		//W,A,S,D,E,MOUSE
-		var w = buffer_read(buff, buffer_s8);
-		var a = buffer_read(buff, buffer_s8);
-		var s = buffer_read(buff, buffer_s8);
-		var d = buffer_read(buff, buffer_s8);
-		var e = buffer_read(buff, buffer_s8);
-		var m = buffer_read(buff, buffer_s8);
-		var mx = buffer_read(buff, buffer_u16);
-		var my = buffer_read(buff, buffer_u16);
+		player.w = buffer_read(buff, buffer_s8);
+		player.a = buffer_read(buff, buffer_s8);
+		player.s = buffer_read(buff, buffer_s8);
+		player.d = buffer_read(buff, buffer_s8);
+		player.e = buffer_read(buff, buffer_s8);
+		player.m = buffer_read(buff, buffer_s8);
+		player.mx = buffer_read(buff, buffer_u16);
+		player.my = buffer_read(buff, buffer_u16);
+		
+		
 	break;
 	
 	default:
