@@ -4,7 +4,7 @@ switch (cmd)
 {
 	case CmdPlayerUpdate.Name: 
 		var playerid = buffer_read(buff, buffer_gameid);
-		var player = find_player(playerid);
+		var player = player_map[? playerid];
 		if(instance_exists(player)) 
 			player.username = buffer_read(buff, buffer_string);	 
 		else

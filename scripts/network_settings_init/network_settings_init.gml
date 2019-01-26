@@ -37,8 +37,11 @@ enum CmdPlayerUpdate
 
 globalvar sendbuffer; 
 globalvar player_list; 
+globalvar player_map;
+
 sendbuffer = buffer_create(256, buffer_grow, 1); 
 player_list = ds_list_create();
+player_map = ds_map_create();
 
 #macro buffer_gameid buffer_s8
 #macro buffer_cmd buffer_u8
