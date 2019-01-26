@@ -28,6 +28,10 @@ switch (cmd)
 
 	break;
 
+	write_begin(Cmd.PlayerRequest);
+	buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);
+	
+	
 	case CmdPlayerRequest.Input: 
 	
 		var playerid = buffer_read(buff, buffer_gameid); 
@@ -40,8 +44,7 @@ switch (cmd)
 		player.d = buffer_read(buff, buffer_s8);
 		player.e = buffer_read(buff, buffer_s8);
 		player.m = buffer_read(buff, buffer_s8);
-		player.mx = buffer_read(buff, buffer_u16);
-		player.my = buffer_read(buff, buffer_u16);
+		player.ma = buffer_read(buff, buffer_u16); 
 		
 		
 	break;
