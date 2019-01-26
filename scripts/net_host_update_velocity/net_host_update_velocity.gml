@@ -9,8 +9,8 @@ while (!ds_queue_empty(queue_velocity_change))
 {
 	var inst = ds_queue_dequeue(queue_velocity_change);
 	buffer_write(sendbuffer, buffer_gameid, inst.playerid);
-	buffer_write(sendbuffer, buffer_gameid, inst.old_xspd);
-	buffer_write(sendbuffer, buffer_gameid, inst.old_yspd);
+	buffer_write(sendbuffer, buffer_f16, inst.old_xspd);
+	buffer_write(sendbuffer, buffer_f16, inst.old_yspd);
 }
 
 net_host_send_all ();
