@@ -18,8 +18,8 @@ switch (cmd)
 		{
 			show_debug_message(i);
 			var playerid = buffer_read(buff, buffer_gameid); 
-			var xSpd = buffer_read(buff, buffer_f16);
-			var ySpd = buffer_read(buff, buffer_f16);
+			var xSpd = buffer_read(buff, buffer_f32);
+			var ySpd = buffer_read(buff, buffer_f32);
 			var player = player_map[? playerid];
 			if (player != undefined && instance_exists(player)) 
 			{ 
