@@ -5,4 +5,6 @@ if (success < 0)
 {
 	show_message("client: can't connect to " + string(global.ip) + ":" + string(global.port));
 	instance_destroy();
+	exit;
 }
+

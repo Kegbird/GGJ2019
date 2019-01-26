@@ -1,4 +1,4 @@
-if(button_pressed(spr_button, 10, 10, 1, 1, "join"))
+if(button_pressed(spr_button, 10, 10, 1, 1, "client"))
 {
 	instance_create_depth(0, 0, 0, obj_client); 
 }
