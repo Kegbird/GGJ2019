@@ -943,6 +943,14 @@
             }
         },
         {
+            "Key": "ef0d4e1c-fded-4e3f-a233-12db9df3f32f",
+            "Value": {
+                "id": "d0fe8725-8ec7-49d1-af28-adcbf9b5ecf9",
+                "resourcePath": "scripts\\net_host_coord_correction\\net_host_coord_correction.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f0ae3675-b8a2-455d-afc8-62a50d75dd89",
             "Value": {
                 "id": "997aab43-4a02-4afc-9349-19132763b8a1",
@@ -1001,6 +1009,7 @@
         "5e9c08b9-ca03-414c-930f-52c9dddc1d72",
         "ecbd3777-915f-42a1-b68a-9008b3cee0b4",
         "ac7f117e-fb40-434e-b878-860baa637260",
+        "ef0d4e1c-fded-4e3f-a233-12db9df3f32f",
         "e7c7f0cf-cef2-421a-892b-250eeaf4c202",
         "27e05721-cfbc-491a-90e6-f7024907473e",
         "47b53713-1174-40bd-abdf-faeea0497c0e",

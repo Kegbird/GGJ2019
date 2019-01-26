@@ -43,6 +43,8 @@ switch (cmd)
 			var ySpd = buffer_read(buff, buffer_f32);
 			if (playerid != obj_player.playerid) {
 				var player = instance_create_depth(0, 0, 0, obj_player_other);
+				ds_list_add(player_list, player);
+				player_map[? playerid] = player;
 				player.playerid = playerid;
 				player.visible = vis;
 				player.x = x_coord;
@@ -51,6 +53,26 @@ switch (cmd)
 				player.ySpd = ySpd;
 			}
 		}
+	break;
+	
+	case CmdPlayerUpdate.Position:
+		var size = buffer_read(buff, buffer_u8);
+		for (var i = 0; i < size; i++)
+		{
+			var playerid = buffer_read(buff, buffer_gameid);
+			var x_coord = buffer_read(buff, buffer_u16);
+			var y_coord = buffer_read(buff, buffer_u16);
+			if (playerid == obj_player.playerid) {
+				obj_player.x = x_coord;
+				obj_player.y = y_coord;
+			}
+			else
+			{
+				player_map[? playerid].x = x_coord;
+				player_map[? playerid].y = y_coord;
+			}
+		}
+		
 	break;
 	
 	default:

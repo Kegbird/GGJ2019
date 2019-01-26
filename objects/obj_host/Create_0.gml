@@ -1,5 +1,4 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            max_players = 8;
-
 players_game_id = 0;
 socket_list = ds_list_create();
 
@@ -15,5 +14,8 @@ if(server < 0)
 }
 
 show_debug_message("server: " + string(server));
- 
+
+correction_time = 30;
+alarm[0] = correction_time;
+
 room_goto(room_game);
