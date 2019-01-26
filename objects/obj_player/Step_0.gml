@@ -42,8 +42,7 @@ if (active) {
 	///FAI FUOCO
 	if (mouse_check_button(global.k_fire) && delay <= 0) {
 		delay = delay_max;
-		var b = instance_create_layer(x, y, "Instances", obj_bull);	
-		b.direction = mouse_dir;
+		with (obj_puntatore) event_perform(ev_other, ev_user0);
 	}
 
 	///ENTRA NELLE VETTURE
