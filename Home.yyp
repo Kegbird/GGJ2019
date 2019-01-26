@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "27c40fd3-284e-4514-a046-6247a8493c8f",
+            "Value": {
+                "id": "216d8089-ec79-4afa-9d20-6c9546bfc200",
+                "resourcePath": "scripts\\net_host_notify_fire\\net_host_notify_fire.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "27e05721-cfbc-491a-90e6-f7024907473e",
             "Value": {
                 "id": "54bd0125-d3fa-4788-9d1f-dc92f7b22627",
@@ -954,6 +962,7 @@
         "ecbd3777-915f-42a1-b68a-9008b3cee0b4",
         "ac7f117e-fb40-434e-b878-860baa637260",
         "ef0d4e1c-fded-4e3f-a233-12db9df3f32f",
+        "27c40fd3-284e-4514-a046-6247a8493c8f",
         "e7c7f0cf-cef2-421a-892b-250eeaf4c202",
         "27e05721-cfbc-491a-90e6-f7024907473e",
         "47b53713-1174-40bd-abdf-faeea0497c0e",
