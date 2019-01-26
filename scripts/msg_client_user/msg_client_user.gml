@@ -43,6 +43,8 @@ switch (cmd)
 			var ySpd = buffer_read(buff, buffer_f32);
 			if (playerid != obj_player.playerid) {
 				var player = instance_create_depth(0, 0, 0, obj_player_other);
+				ds_list_add(player_list, player);
+				player_map[? playerid] = player;
 				player.playerid = playerid;
 				player.visible = vis;
 				player.x = x_coord;
