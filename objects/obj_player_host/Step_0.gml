@@ -43,6 +43,7 @@ if (active) {
 		delay = delay_max;
 		var b = instance_create_layer(x, y, "Instances", obj_bull);	
 		b.direction = fire_dir;
+		net_host_notify_fire(sid, playerid, fire_dir, 0);
 	}
 
 	///ENTRA NELLE VETTURE

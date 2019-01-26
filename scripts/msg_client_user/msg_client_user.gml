@@ -72,7 +72,16 @@ switch (cmd)
 				player_map[? playerid].y = y_coord;
 			}
 		}
+	break;
+	
+	case CmdPlayerUpdate.Fire:
+		var playerid = buffer_read(buff, buffer_gameid);
+		var fire_dir = buffer_read(buff, buffer_u16);
+		var type = buffer_read(buff, buffer_u8);		// Not used
 		
+		var player = player_map[? playerid];
+		var b = instance_create_layer(player.x, player.y, "Instances", obj_bull);	
+		b.direction = fire_dir;
 	break;
 	
 	default:
