@@ -490,7 +490,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "rooms\/room_game\/room_game.yy",
+                "resourcePath": "rooms\/room_game_2\/room_game_2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1763,7 +1763,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "rooms\/room_game1\/room_game1.yy",
+                "resourcePath": "rooms\/room_game\/room_game.yy",
                 "resourceType": "GMRoom"
             }
         },
