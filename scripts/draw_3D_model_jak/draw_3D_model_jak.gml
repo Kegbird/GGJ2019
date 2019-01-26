@@ -11,9 +11,9 @@ gpu_set_zwriteenable(true);
 gpu_set_ztestenable(true);
 //var mtx = mat4_set_translation( 0, 0, -depth);
 var mtx = mat4_set_translation( 0, 0, 0);
-mtx = mat4_scale(mtx, -image_xscale, -image_xscale, -image_xscale);
+mtx = mat4_scale(mtx, -image_xscale, -image_xscale, -1);
 mtx = mat4_rotate_x(mtx, -90);
-mtx = mat4_rotate_z(mtx, image_angle);
+mtx = mat4_rotate_z(mtx, image_angle+180);
 mtx = mat4_translate(mtx, x, y, 0);
 matrix_set(matrix_world, mtx);
 

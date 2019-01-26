@@ -15,5 +15,5 @@ var vect_normal = vec2_to_vec3(pos);
 vect_normal[Vec3.x] -= obj_player.x;
 vect_normal[Vec3.y] -= obj_player.y;
 vect_normal = vec3_normalize(vect_normal);
-x = vect_normal[Vec3.x];
-y = vect_normal[Vec3.y];
+global.aim_xdir = vect_normal[Vec3.x];
+global.aim_ydir = vect_normal[Vec3.y];

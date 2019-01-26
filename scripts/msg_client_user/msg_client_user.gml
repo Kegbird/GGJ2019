@@ -46,7 +46,8 @@ switch (cmd)
 				ds_list_add(player_list, player);
 				player_map[? playerid] = player;
 				player.playerid = playerid;
-				player.visible = vis;
+				player.active = vis;
+				player.visible = vis; 
 				player.x = x_coord;
 				player.y = y_coord;
 				player.xSpd = xSpd;

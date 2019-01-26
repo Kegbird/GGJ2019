@@ -2,28 +2,28 @@ if (active) {
 	mouse_dir = point_direction(x,y,mouse_x,mouse_y);
 
 	var xSpd = 0, ySpd = 0, yCor = 0, xCor = 0;
-
+	
 	if (delay > 0)
 		delay -= delay_cooldown;
 
 	///MOVIMENTO
 	#region KEYBOARD
-	if (keyboard_check(global.k_right) && !instance_position(x + velocity, y, obj_solid)) {
+	if (keyboard_check(global.k_right) && !collision_line(x, y, x + velocity, y - velocity, obj_solid, true, false)) {
 		xSpd += velocity;
 		yCor -= velocity;
 	}
 
-	if (keyboard_check(global.k_left) && !instance_position(x - velocity, y, obj_solid)) {
+	if (keyboard_check(global.k_left) && !collision_line(x, y, x - velocity, y + velocity, obj_solid, true, false)) {
 		xSpd -= velocity;
 		yCor += velocity;
 	}
 
-	if (keyboard_check(global.k_up) && !instance_position(x, y - velocity, obj_solid)) {
+	if (keyboard_check(global.k_up) && !collision_line(x, y, x - velocity, y - velocity, obj_solid, true, false)) {
 		ySpd -= velocity;
 		xCor -= velocity;
 	}
 
-	if (keyboard_check(global.k_down) && !instance_position(x, y + velocity, obj_solid)) {
+	if (keyboard_check(global.k_down) && !collision_line(x, y, x + velocity, y + velocity, obj_solid, true, false)) {
 		ySpd += velocity;
 		xCor += velocity;
 	}
@@ -34,15 +34,23 @@ if (active) {
 	spd = point_distance(x, y, x + xFinal, y + yFinal);
 	dir = point_direction(x, y, x + xFinal, y + yFinal);
 	
-	x += xFinal;
-	y += yFinal;
+	var radius = 6;
+	if (!collision_circle(x + lengthdir_x(spd, dir), y + lengthdir_y(spd, dir), radius, obj_solid, true, false)) {
+		x += xFinal;
+		y += yFinal;
+	}
+
 	
 	scr_player_animation(spd);
 	
 	///FAI FUOCO
 	if (mouse_check_button(global.k_fire) && delay <= 0) {
 		delay = delay_max;
-		with (obj_puntatore) event_perform(ev_other, ev_user0);
+		
+		var ist = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_bull);
+		ist.hspeed = global.aim_xdir;
+		ist.vspeed = global.aim_ydir;
+	 
 	}
 
 	///ENTRA NELLE VETTURE
@@ -85,3 +93,5 @@ buffer_write(sendbuffer, buffer_u16, floor(mouse_dir));
 
 
 net_client_send();
+
+update_aim();

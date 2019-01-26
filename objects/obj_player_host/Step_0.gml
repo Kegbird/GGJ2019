@@ -1,6 +1,4 @@
 
-
-
 if (active) { 
 
 	var xSpd = 0, ySpd = 0, yCor = 0, xCor = 0;
@@ -38,18 +36,16 @@ if (active) {
 	
 	x += xFinal;
 	y += yFinal;
-	
-	scr_player_animation(spd);
-	
+	 
 	///FAI FUOCO
 	if (k_fire && delay <= 0) {
 		delay = delay_max;
-		
-		//porcata by jak & cla
-		with (obj_puntatore) event_perform(ev_other, ev_user0);
-		var xspd = obj_puntatore.x;
-		var yspd = obj_puntatore.y;
-		fire_dir = point_direction(x, y, xspd, yspd);
+		 
+		var ist = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_bull);
+		ist.hspeed = global.aim_xdir;
+		ist.vspeed = global.aim_ydir;
+	 
+		fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
 		
 		//TODO	ADD TO FIRE QUEUE
 		//net_host_notify_fire(sid, playerid, fire_dir, 0);
@@ -67,17 +63,15 @@ if (active) {
 	}
 	
 	if (old_xspd != xSpd || old_yspd != ySpd) 
-	ds_queue_enqueue(queue_velocity_change, id);
+		ds_queue_enqueue(queue_velocity_change, id);
 	
 	old_xspd = xSpd;
 	old_yspd = ySpd;
 } 
 else {
 	x = target.x;
-	y = target.y;
-	visible = false;
-	if (keyboard_check_pressed(global.k_action)) {
-		visible = true;
+	y = target.y; 
+	if (keyboard_check_pressed(global.k_action)) { 
 		active = true;
 		target.active = false;
 		target = id;

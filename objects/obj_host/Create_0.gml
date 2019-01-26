@@ -16,6 +16,6 @@ if(server < 0)
 show_debug_message("server: " + string(server));
 
 correction_time = 30;
-alarm[0] = correction_time;
+//alarm[0] = correction_time;
 
 room_goto(room_game);

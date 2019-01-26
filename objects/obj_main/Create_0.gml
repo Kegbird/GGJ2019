@@ -13,3 +13,6 @@ global.k_down = ord("S");
 
 global.k_fire = mb_left;
 global.k_action = ord("E");
+
+global.aim_xdir = 0;
+global.aim_ydir = 0;

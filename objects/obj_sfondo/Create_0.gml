@@ -6,7 +6,8 @@ world_angle_set = global.world_angle;
 world_angle_act = world_angle_set;
 tempo_scorrimento = 1;
 
-
+cam_x = 0;
+cam_y = 0;
 
 vertex_format_begin(); 
 	vertex_format_add_position_3d(); 
