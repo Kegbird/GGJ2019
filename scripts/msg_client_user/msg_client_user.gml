@@ -53,6 +53,20 @@ switch (cmd)
 				player.ySpd = ySpd;
 			}
 		}
+		size = buffer_read(buff, buffer_u8);
+		show_debug_message("MOBS : " + string(size));
+		for (var i = 0; i < size; i++)
+		{
+			var type = buffer_read(buff, buffer_u8);
+			var mobid = buffer_read(buff, buffer_gameid);
+			var hp = buffer_read(buff, buffer_u8);
+			var x_coord = buffer_read(buff, buffer_u16);
+			var y_coord = buffer_read(buff, buffer_u16);
+			show_debug_message("x : " + string(x_coord) + " y: " + string(y_coord));
+			var inst = mob_create(type, mobid, x_coord, y_coord);
+			inst.mob_hp = hp;
+			
+		}
 	break;
 	
 	case CmdPlayerUpdate.Position:

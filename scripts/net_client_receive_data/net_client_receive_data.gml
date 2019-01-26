@@ -25,6 +25,10 @@ switch (cmd)
 		msg_client_user();
 	break;
 	
+	case Cmd.Mob:
+		msg_mob_user();
+	break;
+	
 	default:
 		show_message("received cmd: " + string(cmd));
 	break;

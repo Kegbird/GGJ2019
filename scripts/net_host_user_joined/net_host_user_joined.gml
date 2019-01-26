@@ -25,8 +25,8 @@ if(ds_list_size(player_list) < max_players)
 	write_begin(Cmd.PlayerUpdate);
 	buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.Sync);
 	var size = ds_list_size(player_list);
-	buffer_write(sendbuffer, buffer_u8, size);
 	// Add all players coordinates
+	buffer_write(sendbuffer, buffer_u8, size);
 	for (var i = 0; i < size; i++) {
 		buffer_write(sendbuffer, buffer_gameid, player_list[| i].playerid);
 		buffer_write(sendbuffer, buffer_u8, player_list[| i].visible);
@@ -35,6 +35,17 @@ if(ds_list_size(player_list) < max_players)
 		buffer_write(sendbuffer, buffer_f32, player_list[| i].old_xspd);
 		buffer_write(sendbuffer, buffer_f32, player_list[| i].old_yspd);
 	}
+	size = ds_list_size(mob_list);
+	// Add all mobs coordinates
+	buffer_write(sendbuffer, buffer_u8, size);
+	for (var i = 0; i < size; i++) {
+		buffer_write(sendbuffer, buffer_u8, mob_list[| i].type);
+		buffer_write(sendbuffer, buffer_gameid, mob_list[| i].mobid);
+		buffer_write(sendbuffer, buffer_u8, mob_list[| i].mob_hp);
+		buffer_write(sendbuffer, buffer_u16, floor(mob_list[| i].x));
+		buffer_write(sendbuffer, buffer_u16, floor(mob_list[| i].y));
+	}
+	
 	net_host_send(sock);
 	 
 	
