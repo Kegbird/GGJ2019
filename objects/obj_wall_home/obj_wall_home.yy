@@ -2,7 +2,7 @@
     "id": "7162b57f-4b07-42b8-9679-b8ffee91b208",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_wall1",
+    "name": "obj_wall_home",
     "eventList": [
         
     ],

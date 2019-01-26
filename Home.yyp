@@ -434,7 +434,7 @@
             "Key": "7162b57f-4b07-42b8-9679-b8ffee91b208",
             "Value": {
                 "id": "25695326-edf7-488f-b4ec-9f5aa5865cfb",
-                "resourcePath": "objects\\obj_wall1\\obj_wall1.yy",
+                "resourcePath": "objects\\obj_wall_home\\obj_wall_home.yy",
                 "resourceType": "GMObject"
             }
         },
