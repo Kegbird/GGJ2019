@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "266d4087-e377-47dc-a83d-833198217f40",
+            "Value": {
+                "id": "17beac5e-f868-4181-917a-88bd842c9fd9",
+                "resourcePath": "views\\266d4087-e377-47dc-a83d-833198217f40.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "27e05721-cfbc-491a-90e6-f7024907473e",
             "Value": {
                 "id": "54bd0125-d3fa-4788-9d1f-dc92f7b22627",
@@ -218,7 +226,7 @@
             "Key": "3caeba39-2f81-49a5-a695-dfc63485e008",
             "Value": {
                 "id": "e1f2d697-ca4d-48a3-9daa-6ac965cd7932",
-                "resourcePath": "sprites\\spr_mob_2\\spr_mob_2.yy",
+                "resourcePath": "sprites\\spr_mob_ciccino_hit\\spr_mob_ciccino_hit.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -247,6 +255,14 @@
             }
         },
         {
+            "Key": "476a2eca-ad12-4f2e-8283-cd584f08e647",
+            "Value": {
+                "id": "7f2200a4-eb2d-485e-a534-30663ce6d97c",
+                "resourcePath": "views\\476a2eca-ad12-4f2e-8283-cd584f08e647.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "47b53713-1174-40bd-abdf-faeea0497c0e",
             "Value": {
                 "id": "d215c167-a044-48da-a27b-7f184c137a33",
@@ -267,6 +283,14 @@
             "Value": {
                 "id": "3ee85c3f-f01c-4b0a-8744-7d91be317492",
                 "resourcePath": "views\\488acb44-2a87-42f1-9fcc-2a83aae38ce6.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4c0e30ba-7584-4336-a201-935f3683733e",
+            "Value": {
+                "id": "8c4de546-e461-49d7-82bd-3f0e4342efaa",
+                "resourcePath": "views\\4c0e30ba-7584-4336-a201-935f3683733e.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -307,6 +331,14 @@
             "Value": {
                 "id": "44c60259-bea7-4de9-814c-6cf7cedb002a",
                 "resourcePath": "sprites\\spr_character1\\spr_character1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5309d496-11e7-4d29-aba6-b5a2666f30dc",
+            "Value": {
+                "id": "3c04ddc8-d157-470f-833d-a04c145f56b2",
+                "resourcePath": "sprites\\spr_mob_ciccino_walk\\spr_mob_ciccino_walk.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -703,6 +735,14 @@
             }
         },
         {
+            "Key": "bb16584f-5567-463f-8de4-04f83c05132a",
+            "Value": {
+                "id": "9d55174b-e732-409a-a576-f41a5c59d003",
+                "resourcePath": "sprites\\spr_mob_ciccino_idle\\spr_mob_ciccino_idle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "be84ea19-d409-4938-aaea-707805c6b806",
             "Value": {
                 "id": "b6b1e8db-4fe3-4f99-8215-dd633649d926",
@@ -723,6 +763,14 @@
             "Value": {
                 "id": "c095d68c-ccc8-42f7-a5bc-f486e5ec6ea8",
                 "resourcePath": "views\\c52d28fb-cd1d-4f63-a49c-4a191c5de220.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c629384c-5b02-4ec7-b009-c3ea53d7457c",
+            "Value": {
+                "id": "180f9f33-d63c-4528-9f59-a878039f6332",
+                "resourcePath": "views\\c629384c-5b02-4ec7-b009-c3ea53d7457c.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -867,6 +915,14 @@
             "Value": {
                 "id": "1f1ad3c0-731a-4d8f-aefd-4af490fad37e",
                 "resourcePath": "views\\e92a2d63-0fd9-4cd8-8355-e6c1f664fc07.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ea0866e6-71cc-40ac-b9de-15f927beff89",
+            "Value": {
+                "id": "ff732c8f-cfb3-4702-bfc4-bf2cfc48d1a7",
+                "resourcePath": "views\\ea0866e6-71cc-40ac-b9de-15f927beff89.yy",
                 "resourceType": "GMFolder"
             }
         },

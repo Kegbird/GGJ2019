@@ -2,7 +2,7 @@
     "id": "3caeba39-2f81-49a5-a695-dfc63485e008",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_mob_2",
+    "name": "spr_mob_ciccino_hit",
     "For3D": false,
     "HTile": false,
     "VTile": false,

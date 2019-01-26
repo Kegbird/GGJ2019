@@ -1,12 +1,12 @@
-/// @description Insert description here
-// You can write your code in this editor
-//image_angle = direction;
 
 switch state {
-	case "walk":
-		move_towards_point(obj_home.x,obj_home.y,spd);
-	break;
-
+	case "walk": {
+		var home = scr_get_home();
+		if (instance_exists(home)) {
+			move_towards_point(home.x, home.y, spd);
+		}
+		break;
+	}
 }
 
 
