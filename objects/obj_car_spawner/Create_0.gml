@@ -1,5 +1,7 @@
-if (!instance_exists(obj_host))
+if (!instance_exists(obj_host)) {
 	instance_destroy();
+	exit;
+}
 
 var inst = instance_create_depth(x,y,0, obj_car);
  
