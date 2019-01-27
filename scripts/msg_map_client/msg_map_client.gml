@@ -9,7 +9,7 @@ switch (cmd)
 		var inst = instance_create_depth(px, py, 0, obj_car);
 		inst.vehicleid = vehicleid;
 		ds_list_add(vehicle_list, inst);
-		vehicle_map[? vehicleid] = inst;
+		vehicle_map[? vehicleid] = inst; 
 	break;
 	
 	default:

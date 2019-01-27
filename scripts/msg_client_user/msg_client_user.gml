@@ -68,6 +68,21 @@ switch (cmd)
 			inst.mob_hp = hp;
 			
 		}
+		
+		size = buffer_read(buff, buffer_u8); 
+		for (var i = 0; i < size; i++)
+		{
+			var vehicleid = buffer_read(buff, buffer_gameid);
+			var px = buffer_read(buff, buffer_u32);
+			var py = buffer_read(buff, buffer_u32);
+			var inst = instance_create_depth(px, py, 0, obj_car);
+			inst.vehicleid = vehicleid;
+			ds_list_add(vehicle_list, inst);
+			vehicle_map[? vehicleid] = inst; 
+			
+		}
+		
+		
 	break;
 	
 	case CmdPlayerUpdate.Position:
@@ -108,7 +123,7 @@ switch (cmd)
 		
 		if(obj_player.playerid == playerid)
 		{
-			show_debug_message("entering vehicle");
+			show_debug_message("entering vehicle " + string(vehicleid) + string(object_get_name(vehicle.object_index)));
 			//enter vehicle	
 			obj_player.active = false;
 			obj_player.target = vehicle;

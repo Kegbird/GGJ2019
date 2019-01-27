@@ -80,6 +80,7 @@ if (active) {
 		old_yspd = ySpd;
 		
 		if(k_action) {
+			
 			var car = collision_circle(x, y, 16, obj_car, 0, 1);
 			if (car && !car.active) {
 				active = false;
@@ -99,8 +100,10 @@ if (active) {
 } 
 else {
 	
-	if (global.server  && k_action) {
+	if (global.server  && k_action == Key.Pressed) 
+	{
 		
+		k_action =  Key.Idle;
 		write_begin(Cmd.PlayerUpdate);
 		buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.LeftVehicle); 
 		buffer_write(sendbuffer, buffer_gameid, playerid); 
@@ -120,7 +123,7 @@ else {
 
 if(target != noone)
 {
-	show_debug_message(string(x) + "," + string(y));
+	show_debug_message(string(object_get_name( target.object_index)) + "   " + string(x) + "," + string(y));
 	x = target.x;
 	y = target.y;
 }
@@ -137,7 +140,7 @@ if(!global.server)
 	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_left) ? 1 : (keyboard_check_released(global.k_left) ? -1 : 0));
 	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_down) ? 1 : (keyboard_check_released(global.k_down) ? -1 : 0));
 	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_right) ? 1 : (keyboard_check_released(global.k_right) ? -1 : 0));
-	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_action) ? 1 : (keyboard_check_released(global.k_action) ? -1 : 0));
+	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_action));
 	buffer_write(sendbuffer, buffer_s8, mouse_check_button_pressed(global.k_fire) ? 1 : (mouse_check_button_released(global.k_fire) ? -1 : 0));
 	buffer_write(sendbuffer, buffer_u16, floor(fire_dir));
 

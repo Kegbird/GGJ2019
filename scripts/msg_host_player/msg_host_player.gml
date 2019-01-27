@@ -51,7 +51,7 @@ switch (cmd)
 			k_right = d == Key.Idle ? k_right : (d == Key.Pressed ? true : false);
 			k_down = s == Key.Idle ? k_down : (s == Key.Pressed ? true : false);
 			k_fire = m == Key.Idle ? k_fire : (m == Key.Pressed ? true : false); 
-			k_action = e == Key.Idle ? k_action : (e == Key.Pressed ? true : false);
+			k_action = e;
 			fire_dir = ma;
 		}
 		
