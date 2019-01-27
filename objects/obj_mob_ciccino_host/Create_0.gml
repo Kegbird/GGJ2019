@@ -24,3 +24,4 @@ anim_hit = spr_mob_ciccino_hit;
 bullet = obj_mob_bullet_01;
 
 sprite_index = anim_walk;
+alarm[0] = room_speed * 4;

@@ -41,7 +41,8 @@ enum CmdPlayerUpdate
   
 enum CmdMob {
 	None,
-	Spawn
+	Spawn,
+	Destroy
 }
 
 enum CmdMap{

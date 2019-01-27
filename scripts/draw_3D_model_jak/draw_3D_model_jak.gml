@@ -6,6 +6,8 @@
 ///@param	{Model} modello			Il modello da disegnare
 ///@param	{Texture} texture		La texture del modello
 
+if (instance_exists(obj_player) && point_distance(x, y, obj_player.x, obj_player.y) > 400)
+	return;
 gpu_set_cullmode(cull_clockwise);
 gpu_set_zwriteenable(true);
 gpu_set_ztestenable(true);
