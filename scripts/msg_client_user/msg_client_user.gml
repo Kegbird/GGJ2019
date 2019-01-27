@@ -126,19 +126,19 @@ switch (cmd)
 			}
 		}
 		
-		var size = buffer_read(buff, buffer_u8);
-		for (var i = 0; i < size; i++)
-		{
-			var vehicleid = buffer_read(buff, buffer_gameid);
-			var x_coord = buffer_read(buff, buffer_u16);
-			var y_coord = buffer_read(buff, buffer_u16);
-			var angle = buffer_read(buff, buffer_u16);
+		//var size = buffer_read(buff, buffer_u8);
+		//for (var i = 0; i < size; i++)
+		//{
+		//	var vehicleid = buffer_read(buff, buffer_gameid);
+		//	var x_coord = buffer_read(buff, buffer_u16);
+		//	var y_coord = buffer_read(buff, buffer_u16);
+		//	var angle = buffer_read(buff, buffer_u16);
 			  
-			var v = vehicle_map[? vehicleid];
-			v.x = x_coord;
-			v.y = y_coord; 
-			v.direction = angle; 
-		}
+		//	var v = vehicle_map[? vehicleid];
+		//	v.x = x_coord;
+		//	v.y = y_coord; 
+		//	v.direction = angle; 
+		//}
 	break;
 	
 	case CmdPlayerUpdate.Fire:
