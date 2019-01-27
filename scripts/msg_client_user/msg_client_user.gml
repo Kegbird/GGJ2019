@@ -155,13 +155,13 @@ switch (cmd)
 		var playerid = buffer_read(buff, buffer_gameid);
 		var vehicleid = buffer_read(buff, buffer_gameid); 
 		
-		var vehicle = vehicle_map[? vehicleid];  
-		vehicle.active = true;
+		var vehicle = vehicle_map[? vehicleid];
 		
 		if(obj_player.playerid == playerid)
 		{
 			show_debug_message("entering vehicle " + string(vehicleid) + string(object_get_name(vehicle.object_index)));
-			//enter vehicle	
+			//enter vehicle	  
+			vehicle.active = true;
 			obj_player.active = false;
 			obj_player.target = vehicle;
 		}
@@ -180,15 +180,15 @@ switch (cmd)
 		var playerid = buffer_read(buff, buffer_gameid); 
 		var vehicleid = buffer_read(buff, buffer_gameid); 
 		
-		var vehicle = vehicle_map[? vehicleid];  
-		vehicle.active = false;
+		var vehicle = vehicle_map[? vehicleid]; 
 		
 		if(obj_player.playerid == playerid)
 		{
 			show_debug_message("leaving vehicle " + string(vehicleid)) ;
 			//exit vehicle	
 			obj_player.active = true;
-			obj_player.target = noone;
+			obj_player.target = noone; 
+			vehicle.active = false;
 		}
 		else
 		{
