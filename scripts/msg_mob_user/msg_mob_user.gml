@@ -11,7 +11,7 @@ switch (cmd)
 	break;
 	
 	case CmdMob.Destroy:
-		var mobid = buffer_read(buff, buffer_u16);
+		var mobid = buffer_read(buff, buffer_gameid);
 		ds_list_delete(mob_list, ds_list_find_index(mob_list, mob_map[? mobid]));
 		instance_destroy(mob_map[? mobid]);
 	break;
