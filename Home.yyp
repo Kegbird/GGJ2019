@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "024e54dc-170e-4cf2-801d-11373f18b07e",
+            "Value": {
+                "id": "93e1725b-fe7e-4d94-a823-855446cc5102",
+                "resourcePath": "sprites\\spr_menu_logo\\spr_menu_logo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "03b9c2dc-d220-40d3-aaac-eaa0ec8babcd",
             "Value": {
                 "id": "b7e8f701-748a-4fd5-ae42-9d80ddba0ab1",
@@ -284,6 +292,14 @@
                 "id": "1e1ad06d-eacb-46f9-8fe1-df3fee11483b",
                 "resourcePath": "scripts\/mat4_set_rotation_x\/mat4_set_rotation_x.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "31f531e4-47bb-41c3-86c7-c6224511bb66",
+            "Value": {
+                "id": "74286273-2574-4064-8d04-74f4e00fbc91",
+                "resourcePath": "views\\31f531e4-47bb-41c3-86c7-c6224511bb66.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -887,6 +903,14 @@
             }
         },
         {
+            "Key": "7e925f5c-1fd5-4e1d-b8bd-00db6e484dcb",
+            "Value": {
+                "id": "b3e99e35-2e36-4529-b00e-11ea4ef7758d",
+                "resourcePath": "sprites\\spr_menu_button\\spr_menu_button.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "80421474-803e-4a1d-a2cb-108162888af8",
             "Value": {
                 "id": "fdd1055f-9613-4587-98db-34b1d3013c97",
@@ -1148,6 +1172,14 @@
                 "id": "453e2a28-a8f5-4e35-85dc-80d266910c79",
                 "resourcePath": "objects\\obj_sprite_3d_parent_non_solid\\obj_sprite_3d_parent_non_solid.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "aacfc505-28c3-4104-9c63-fff997c17ce6",
+            "Value": {
+                "id": "249e7c74-5644-49a3-b060-a35145bfc2e6",
+                "resourcePath": "fonts\\font0\\font0.yy",
+                "resourceType": "GMFont"
             }
         },
         {

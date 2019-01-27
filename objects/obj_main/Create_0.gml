@@ -16,3 +16,12 @@ global.k_action = ord("E");
 
 global.aim_xdir = 0;
 global.aim_ydir = 0;
+
+global.username = "Username";
+global.meaning = "Default";
+
+state = 0;
+cursor = "|";
+text_max_len = 60;
+text_max_width = 128;
+alarm[0] = 30;
