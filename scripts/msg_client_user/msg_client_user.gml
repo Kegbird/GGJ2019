@@ -174,9 +174,7 @@ switch (cmd)
 		
 	break;
 	
-	case CmdPlayerUpdate.LeftVehicle:	
-	
-		
+	case CmdPlayerUpdate.LeftVehicle:
 		var playerid = buffer_read(buff, buffer_gameid); 
 		var vehicleid = buffer_read(buff, buffer_gameid); 
 		
