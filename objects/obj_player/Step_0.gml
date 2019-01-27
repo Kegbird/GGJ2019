@@ -8,7 +8,7 @@ if(!global.server)
 	k_down = keyboard_check(global.k_down);
 	k_fire = mouse_check_button(global.k_fire) ;
 	k_action = keyboard_check_pressed(global.k_action);
-	fire_dir = 0;
+	//fire_dir = 0;
 }
 
 if (active) {
@@ -57,7 +57,7 @@ if (active) {
 	
 	if(!global.server) 
 		scr_player_animation(spd);
-	else if (k_fire && delay <= 0) 
+	if (k_fire && delay <= 0) 
 	{
 		delay = delay_max;
 		
@@ -68,8 +68,10 @@ if (active) {
 			ist.vspeed = global.aim_ydir;*/
 	 
 			fire_dir = point_direction(0, 0, global.aim_xdir, global.aim_ydir);
+			show_debug_message(string(fire_dir));
 		}
 		ist.direction = fire_dir;
+		show_debug_message(string(fire_dir));
 		//METTERE IN CODA 
 	}
 
