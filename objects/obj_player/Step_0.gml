@@ -14,7 +14,7 @@ if(!global.server)
 if (active) {
 	 
 	visible = true;
-	fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
+	//fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
 	var xSpd = 0, ySpd = 0, yCor = 0, xCor = 0;
 	
 	if (delay > 0)
@@ -57,15 +57,19 @@ if (active) {
 	
 	if(!global.server) 
 		scr_player_animation(spd);
-	else  if (k_fire && delay <= 0) 
+	else if (k_fire && delay <= 0) 
 	{
 		delay = delay_max;
 		
 		var ist = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_bull);
-		ist.hspeed = global.aim_xdir;
-		ist.vspeed = global.aim_ydir;
+		if (!global.server)
+		{
+			/*ist.hspeed = global.aim_xdir;
+			ist.vspeed = global.aim_ydir;*/
 	 
-		fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
+			fire_dir = point_direction(0, 0, global.aim_xdir, global.aim_ydir);
+		}
+		ist.direction = fire_dir;
 		//METTERE IN CODA 
 	}
 
