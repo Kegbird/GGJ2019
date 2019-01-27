@@ -1,1 +1,1 @@
-x += 0.5;
+update_depth_jak();
