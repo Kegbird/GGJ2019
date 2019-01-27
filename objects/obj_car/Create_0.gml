@@ -16,3 +16,15 @@ collision_enter = false;
 delay = 0;
 delay_cooldown = 0.25;
 delay_max = 2;
+
+
+k_right = false;
+k_up = false;
+k_left = false;
+k_down = false;
+k_fire = false;
+k_action = false;
+fire_dir = 0;
+
+old_xspd = 0;
+old_yspd = 0;

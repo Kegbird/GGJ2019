@@ -2,7 +2,7 @@
 if (parameter_count() == 3) 
 {
 	var s = 100;
-	for (var i=0; i<1; i++) {
+	for (var i=0; i<2; i++) {
 	    shell_execute(parameter_string(0),
 	        parameter_string(1) + " " +
 	        parameter_string(2) + " " +

@@ -57,6 +57,34 @@ switch (cmd)
 		
 	break;
 	
+	case CmdPlayerRequest.InputVehicle: 
+	
+		var vehicleid = buffer_read(buff, buffer_gameid); 
+		var vehicle = vehicle_map[? vehicleid];
+		
+		with(vehicle) 
+		{
+			//W,A,S,D,E,MOUSE
+			var w = buffer_read(buff, buffer_s8);
+			var a = buffer_read(buff, buffer_s8);
+			var s = buffer_read(buff, buffer_s8);
+			var d = buffer_read(buff, buffer_s8);
+			var e = buffer_read(buff, buffer_s8);
+			var m = buffer_read(buff, buffer_s8);
+			var ma = buffer_read(buff, buffer_u16); 
+		
+		
+			k_up = w == Key.Idle ? k_up : (w == Key.Pressed ? true : false);
+			k_left = a == Key.Idle ? k_left : (a == Key.Pressed ? true : false);
+			k_right = d == Key.Idle ? k_right : (d == Key.Pressed ? true : false);
+			k_down = s == Key.Idle ? k_down : (s == Key.Pressed ? true : false);
+			k_fire = m == Key.Idle ? k_fire : (m == Key.Pressed ? true : false); 
+			k_action = e;
+			fire_dir = ma;
+		}
+		
+	break;
+	
 	default:
 		show_message("received cmd: " + string(cmd));
 	break;
