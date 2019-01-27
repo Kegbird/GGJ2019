@@ -17,7 +17,6 @@ switch (cmd)
 		for (var i = 0; i < size; i++)
 		{
 			var playerid = buffer_read(buff, buffer_gameid);
-			show_debug_message("Velocity change for: " + string(playerid));
 			var xSpd = buffer_read(buff, buffer_f32);
 			var ySpd = buffer_read(buff, buffer_f32);
 			var player = player_map[? playerid];
