@@ -60,6 +60,8 @@ if (active) {
 
 	#endregion
 	
+	
+	
 	if(!global.server) 
 		scr_player_animation(spd);
 	if (k_fire && delay <= 0) 
@@ -91,7 +93,7 @@ if (active) {
 		old_xspd = xSpd;
 		old_yspd = ySpd;
 		
-		if(k_action) {
+		if(k_action == Key.Pressed) {
 			
 			k_action =  Key.Idle;
 			var car = collision_circle(x, y, 16, obj_car, 0, 1);
@@ -107,6 +109,12 @@ if (active) {
 				show_debug_message("entering vehicle  " + string(car.vehicleid));
 				
 			}
+			
+		}
+	}
+	else {
+		if (keyboard_check_pressed(global.k_action)) {
+			scr_interact_message(self.id);	
 		}
 	}
 	
@@ -141,8 +149,8 @@ if(target != noone)
 	
 if(!global.server)
 {
-	//invia dati movimento
 	update_depth_jak();
+	//invia dati movimento
 
 	write_begin(Cmd.PlayerRequest);
 	buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);

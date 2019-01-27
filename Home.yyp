@@ -303,6 +303,14 @@
             }
         },
         {
+            "Key": "39b4ee8d-d3f4-4df3-8ee4-46e6268724f2",
+            "Value": {
+                "id": "32422a11-0393-4465-a762-6b7420ff7722",
+                "resourcePath": "objects\\obj_nuvoletta\\obj_nuvoletta.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3a41152e-0583-46ab-a63f-e4c6584ef993",
             "Value": {
                 "id": "304be2d2-8ded-4f65-8dd0-29060e59733a",
@@ -387,6 +395,14 @@
             "Value": {
                 "id": "4187d8c5-1731-49b4-a441-91a6cf710597",
                 "resourcePath": "scripts\/mat4_set_translation\/mat4_set_translation.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "40057d98-ecc1-40e2-af2c-f0433e7ef3a2",
+            "Value": {
+                "id": "5f1d1b5c-f665-487d-a1c5-e7c68a57c75a",
+                "resourcePath": "scripts\\draw_sprite_ext_jak\\draw_sprite_ext_jak.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -699,6 +715,14 @@
             "Value": {
                 "id": "82db793a-f3ca-482d-bb64-31138789a49e",
                 "resourcePath": "scripts\/net_host_send\/net_host_send.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "697bebde-e31c-413b-90ac-75cc73950a65",
+            "Value": {
+                "id": "71105857-fde4-4f23-9234-017991908c18",
+                "resourcePath": "scripts\\draw_surface_jak\\draw_surface_jak.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1159,6 +1183,14 @@
             }
         },
         {
+            "Key": "ac25ecf3-6544-4847-8c56-884794b786c3",
+            "Value": {
+                "id": "94818185-b7e9-4188-9ceb-0b7fe12929e5",
+                "resourcePath": "sprites\\ui_messagebox\\ui_messagebox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ac7f117e-fb40-434e-b878-860baa637260",
             "Value": {
                 "id": "f0b84105-6ab3-43f0-b291-2bb7495ab148",
@@ -1340,6 +1372,14 @@
                 "id": "86e197e8-63bc-4394-a14c-03ad5f3191c5",
                 "resourcePath": "options\/windows\/options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d017cf8b-4f1c-4cbc-b5ab-206ef5e4dd59",
+            "Value": {
+                "id": "56f0ec5b-eb86-4a07-916e-6843b3ecac9c",
+                "resourcePath": "fonts\\font0\\font0.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1567,6 +1607,14 @@
             }
         },
         {
+            "Key": "ebbdf149-f16f-472d-ae69-cf3bba480f93",
+            "Value": {
+                "id": "4167826d-372d-48b3-9083-2f557549753b",
+                "resourcePath": "scripts\\scr_interact_message\\scr_interact_message.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ec0c3693-3372-400e-9b54-207d4a730d1a",
             "Value": {
                 "id": "326e4af0-484c-414f-9945-18776ad84494",
@@ -1732,6 +1780,8 @@
         "885763f9-15dd-404d-b061-d3c64af29692",
         "227cb92f-6cf3-4dc6-b78e-c8be250989d5",
         "2821638c-6d13-4173-b07e-bc9027e5a1cc",
+        "697bebde-e31c-413b-90ac-75cc73950a65",
+        "40057d98-ecc1-40e2-af2c-f0433e7ef3a2",
         "26d45b67-7ae5-4d95-9efb-a70d424a806b",
         "8b941d41-550e-45e9-9c84-c4ebde3bb035",
         "3a41152e-0583-46ab-a63f-e4c6584ef993",
@@ -1765,6 +1815,7 @@
         "c1f15d63-98aa-4c1e-bc33-c3c2adcaf17b",
         "a5aa472d-facd-4f22-89ee-0aabfd8a7215",
         "ffe15d74-6631-4b58-9343-f03f22e5db6f",
+        "ebbdf149-f16f-472d-ae69-cf3bba480f93",
         "fdc7d427-24b5-445d-bc94-23d43f3970e9",
         "b1f401c4-6b38-4589-8ac1-5c0c7a063f18"
     ],
