@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "2037a81b-180e-4960-98de-d768de206314",
+            "Value": {
+                "id": "30783bae-95de-45c5-be2a-946846143130",
+                "resourcePath": "objects\\obj_block_16x\\obj_block_16x.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "219506c6-2c02-4f25-91bc-86bda17a9190",
             "Value": {
                 "id": "587ef8d3-5d54-4e83-a956-02f0b2746dea",
@@ -204,6 +212,14 @@
                 "id": "17beac5e-f868-4181-917a-88bd842c9fd9",
                 "resourcePath": "views\/266d4087-e377-47dc-a83d-833198217f40.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "26d45b67-7ae5-4d95-9efb-a70d424a806b",
+            "Value": {
+                "id": "f98304f1-4967-4940-a096-3027d28ceab3",
+                "resourcePath": "scripts\\draw_text_jak\\draw_text_jak.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -732,6 +748,14 @@
                 "id": "5b64ef44-d570-4532-8795-ad4ccfb8a4bd",
                 "resourcePath": "scripts\/vec4_transform\/vec4_transform.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6f2d5209-54a3-41b3-93bd-c2253b1da7da",
+            "Value": {
+                "id": "8c077103-821c-4cef-a9ae-ca23d789dfc2",
+                "resourcePath": "sprites\\spr_solid\\spr_solid.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1708,6 +1732,7 @@
         "885763f9-15dd-404d-b061-d3c64af29692",
         "227cb92f-6cf3-4dc6-b78e-c8be250989d5",
         "2821638c-6d13-4173-b07e-bc9027e5a1cc",
+        "26d45b67-7ae5-4d95-9efb-a70d424a806b",
         "8b941d41-550e-45e9-9c84-c4ebde3bb035",
         "3a41152e-0583-46ab-a63f-e4c6584ef993",
         "7110795c-3a0d-42c2-b359-7adcf65667b7",

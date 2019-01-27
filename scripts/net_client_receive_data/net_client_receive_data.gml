@@ -33,7 +33,7 @@ switch (cmd)
 	break;
 	
 	default:
-		show_message("received cmd: " + string(cmd));
+		show_message("client received cmd: " + string(cmd));
 	break;
 }
 
