@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "024e54dc-170e-4cf2-801d-11373f18b07e",
+            "Value": {
+                "id": "93e1725b-fe7e-4d94-a823-855446cc5102",
+                "resourcePath": "sprites\\spr_menu_logo\\spr_menu_logo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "03b9c2dc-d220-40d3-aaac-eaa0ec8babcd",
             "Value": {
                 "id": "b7e8f701-748a-4fd5-ae42-9d80ddba0ab1",
@@ -284,6 +292,14 @@
                 "id": "1e1ad06d-eacb-46f9-8fe1-df3fee11483b",
                 "resourcePath": "scripts\/mat4_set_rotation_x\/mat4_set_rotation_x.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "31f531e4-47bb-41c3-86c7-c6224511bb66",
+            "Value": {
+                "id": "74286273-2574-4064-8d04-74f4e00fbc91",
+                "resourcePath": "views\\31f531e4-47bb-41c3-86c7-c6224511bb66.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -655,6 +671,14 @@
             }
         },
         {
+            "Key": "5fe8b79f-a191-4ab5-830c-d90f684be620",
+            "Value": {
+                "id": "dc24c4cd-0134-4acc-80f7-b9a7ef7990a7",
+                "resourcePath": "views\\5fe8b79f-a191-4ab5-830c-d90f684be620.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "626ca22d-023e-49e4-9242-d42c0156acd8",
             "Value": {
                 "id": "fad8cf0d-bc28-4130-8107-421ba2621e68",
@@ -772,6 +796,14 @@
                 "id": "861d5a33-564e-44a0-92fc-1d46bc9d1f45",
                 "resourcePath": "scripts\/vec4_set\/vec4_set.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6ec9b775-ec7b-4e26-934c-7e33f5dc3670",
+            "Value": {
+                "id": "b982025b-ff42-4155-9f69-8c78b5a4c650",
+                "resourcePath": "fonts\\font0\\font0.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -908,6 +940,14 @@
                 "id": "8cadc9da-1167-4129-9e91-05a2201dacd9",
                 "resourcePath": "options\/windowsuap\/options_windowsuap.yy",
                 "resourceType": "GMWindowsUAPOptions"
+            }
+        },
+        {
+            "Key": "7e925f5c-1fd5-4e1d-b8bd-00db6e484dcb",
+            "Value": {
+                "id": "b3e99e35-2e36-4529-b00e-11ea4ef7758d",
+                "resourcePath": "sprites\\spr_menu_button\\spr_menu_button.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1175,6 +1215,14 @@
             }
         },
         {
+            "Key": "aacfc505-28c3-4104-9c63-fff997c17ce6",
+            "Value": {
+                "id": "249e7c74-5644-49a3-b060-a35145bfc2e6",
+                "resourcePath": "fonts\\font0\\font0.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "ab5ff97b-abff-4f86-8f46-77fdef399357",
             "Value": {
                 "id": "1da99c15-a032-441c-a32e-326990ba51a6",
@@ -1372,14 +1420,6 @@
                 "id": "86e197e8-63bc-4394-a14c-03ad5f3191c5",
                 "resourcePath": "options\/windows\/options_windows.yy",
                 "resourceType": "GMWindowsOptions"
-            }
-        },
-        {
-            "Key": "d017cf8b-4f1c-4cbc-b5ab-206ef5e4dd59",
-            "Value": {
-                "id": "56f0ec5b-eb86-4a07-916e-6843b3ecac9c",
-                "resourcePath": "fonts\\font0\\font0.yy",
-                "resourceType": "GMFont"
             }
         },
         {
