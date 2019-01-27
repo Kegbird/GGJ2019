@@ -47,10 +47,15 @@ if (active) {
 	spd = point_distance(x, y, x + xFinal, y + yFinal);
 	dir = point_direction(x, y, x + xFinal, y + yFinal);
 	
-	var radius = 6;
+	var radius = 8;
 	if (!collision_circle(x + lengthdir_x(spd, dir), y + lengthdir_y(spd, dir), radius, obj_solid, true, false)) {
 		x += xFinal;
 		y += yFinal;
+	}
+	
+	if (abs(spd) < 0.1) {
+		image_speed = 0;
+		image_index = 0;
 	}
 
 	#endregion

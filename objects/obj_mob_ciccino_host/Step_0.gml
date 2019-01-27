@@ -9,3 +9,8 @@ switch state {
 		break;
 	}
 }
+
+var c = collision_circle(x, y, 8, obj_wall_home, 1, 1);
+if (c) {
+	instance_destroy();	
+}

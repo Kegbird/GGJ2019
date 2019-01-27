@@ -1,1 +1,1 @@
-return instance_nearest(x, y, obj_home);
+return instance_nearest(x, y, obj_wall_home);
