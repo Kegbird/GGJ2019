@@ -5,6 +5,7 @@ image_speed = 1;
 image_index = 0;
 direction = irandom_range(0,359);
 
+// Probably useless(most of them)
 killed = false;
 mob_hp = 5;
 timer = 0;

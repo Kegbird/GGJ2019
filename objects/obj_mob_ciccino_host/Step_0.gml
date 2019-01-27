@@ -9,4 +9,3 @@ switch state {
 		break;
 	}
 }
-
