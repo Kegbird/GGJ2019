@@ -30,6 +30,25 @@ switch (cmd)
 		 
 	break;
 	
+	case CmdPlayerUpdate.VelocityCar: 
+	
+		var size = buffer_read(buff, buffer_u8);
+		for (var i = 0; i < size; i++)
+		{
+			var vehicleid = buffer_read(buff, buffer_gameid);
+			//show_debug_message("Velocity change for car: " + string(playerid));
+			var xSpd = buffer_read(buff, buffer_f32);
+			var ySpd = buffer_read(buff, buffer_f32);
+			var vehicle = vehicle_map[? vehicleid];
+			if (vehicle != undefined && instance_exists(vehicle)) 
+			{ 
+				vehicle.xSpd = xSpd;
+				vehicle.ySpd = ySpd;
+			}
+		}
+		 
+	break;
+	
 	case CmdPlayerUpdate.Sync:		// Megapack
 		
 		var size = buffer_read(buff, buffer_u8);
@@ -98,9 +117,24 @@ switch (cmd)
 			}
 			else
 			{
-				player_map[? playerid].x = x_coord;
-				player_map[? playerid].y = y_coord;
+				var p = player_map[? playerid];
+				p.x = x_coord;
+				p.y = y_coord;
 			}
+		}
+		
+		var size = buffer_read(buff, buffer_u8);
+		for (var i = 0; i < size; i++)
+		{
+			var vehicleid = buffer_read(buff, buffer_gameid);
+			var x_coord = buffer_read(buff, buffer_u16);
+			var y_coord = buffer_read(buff, buffer_u16);
+			var angle = buffer_read(buff, buffer_u16);
+			  
+			var v = vehicle_map[? vehicleid];
+			v.x = x_coord;
+			v.y = y_coord; 
+			v.direction = angle; 
 		}
 	break;
 	

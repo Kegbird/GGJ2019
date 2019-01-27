@@ -22,7 +22,8 @@ enum CmdPlayerRequest
 {
 	None,
 	Name,
-	Input
+	Input,
+	InputVehicle
 }
 
 // Data update sent from server to client 
@@ -34,6 +35,7 @@ enum CmdPlayerUpdate
 	Fire,
 	Position, //send the position of all the players 
 	Velocity, //send the velocity change (spd, dir) of each player
+	VelocityCar, //send the velocity change (spd, dir) of each car
 	TakeVehicle, 
 	LeftVehicle,
 	Damage
@@ -65,6 +67,7 @@ globalvar mobtype;
 globalvar vehicle_next_id;
 globalvar queue_damage_mob;
 globalvar queue_velocity_change;
+globalvar queue_velocity_change_car;
 
 sendbuffer = buffer_create(256, buffer_grow, 1); 
 player_list = ds_list_create();
@@ -84,3 +87,4 @@ mobtype[0] = obj_mob_ciccino_host;
 
 queue_damage_mob = ds_queue_create();
 queue_velocity_change = ds_queue_create();
+queue_velocity_change_car = ds_queue_create();
