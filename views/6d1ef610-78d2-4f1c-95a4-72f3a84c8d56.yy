@@ -4,8 +4,7 @@
     "mvc": "1.1",
     "name": "6d1ef610-78d2-4f1c-95a4-72f3a84c8d56",
     "children": [
-        "3a47a72b-ad3c-41ee-8dce-c657378fde88",
-        "5046b6e2-8e25-49b0-ac17-5b06624c17ae"
+        "3a47a72b-ad3c-41ee-8dce-c657378fde88"
     ],
     "filterType": "GMObject",
     "folderName": "Jak",
