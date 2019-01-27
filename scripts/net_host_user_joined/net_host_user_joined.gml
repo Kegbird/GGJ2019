@@ -53,6 +53,8 @@ if(ds_list_size(player_list) < max_players)
 	size = ds_list_size(vehicle_list);
 	buffer_write(sendbuffer, buffer_u8, size);
 	for (var i = 0; i < size; i++) { 
+		
+		show_debug_message("net_host_user_sending: vehicleid: " + string(vehicle_list[| i].vehicleid));
 		buffer_write(sendbuffer, buffer_gameid, vehicle_list[| i].vehicleid); 
 		buffer_write(sendbuffer, buffer_u32, floor(vehicle_list[| i].x));
 		buffer_write(sendbuffer, buffer_u32, floor(vehicle_list[| i].y));

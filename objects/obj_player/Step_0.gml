@@ -93,7 +93,7 @@ if (active) {
 				buffer_write(sendbuffer, buffer_gameid, playerid); 
 				buffer_write(sendbuffer, buffer_gameid, car.vehicleid); 
 				net_host_send_all();
-				show_debug_message("entering vehicle");
+				show_debug_message("entering vehicle  " + string(car.vehicleid));
 				
 			}
 		}
