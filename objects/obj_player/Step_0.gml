@@ -13,7 +13,8 @@ if(!global.server)
 
 if (active) {
 	 
-	fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
+	visible = true;
+	//fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
 	var xSpd = 0, ySpd = 0, yCor = 0, xCor = 0;
 	
 	if (delay > 0)
@@ -56,15 +57,19 @@ if (active) {
 	
 	if(!global.server) 
 		scr_player_animation(spd);
-	else  if (k_fire && delay <= 0) 
+	else if (k_fire && delay <= 0) 
 	{
 		delay = delay_max;
 		
 		var ist = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_bull);
-		ist.hspeed = global.aim_xdir;
-		ist.vspeed = global.aim_ydir;
+		if (!global.server)
+		{
+			/*ist.hspeed = global.aim_xdir;
+			ist.vspeed = global.aim_ydir;*/
 	 
-		fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
+			fire_dir = point_direction(0, 0, global.aim_xdir, global.aim_ydir);
+		}
+		ist.direction = fire_dir;
 		//METTERE IN CODA 
 	}
 
@@ -81,6 +86,7 @@ if (active) {
 		
 		if(k_action) {
 			
+			k_action =  Key.Idle;
 			var car = collision_circle(x, y, 16, obj_car, 0, 1);
 			if (car && !car.active) {
 				active = false;
@@ -102,7 +108,6 @@ else {
 	
 	if (global.server  && k_action == Key.Pressed) 
 	{
-		
 		k_action =  Key.Idle;
 		write_begin(Cmd.PlayerUpdate);
 		buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.LeftVehicle); 
@@ -116,26 +121,25 @@ else {
 		target = noone;
 				
 	}
-	//else 
-	//	visible = false;
-	
+	else 
+		visible = false;
 }
 
 if(target != noone)
 {
-	show_debug_message(string(object_get_name( target.object_index)) + "   " + string(x) + "," + string(y));
 	x = target.x;
 	y = target.y;
 }
 	
+	
 if(!global.server)
 {
+	//invia dati movimento
 	update_depth_jak();
 
 	write_begin(Cmd.PlayerRequest);
 	buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);
 	buffer_write(sendbuffer, buffer_gameid, playerid);
-
 	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_up) ? 1 : (keyboard_check_released(global.k_up) ? -1 : 0));
 	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_left) ? 1 : (keyboard_check_released(global.k_left) ? -1 : 0));
 	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_down) ? 1 : (keyboard_check_released(global.k_down) ? -1 : 0));
