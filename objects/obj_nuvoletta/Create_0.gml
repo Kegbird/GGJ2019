@@ -19,7 +19,7 @@ show = ""; // testo disegnato
 pos = 1;
 stage = 0;
 boxw = 300;
-a = 1;
+a = 0;
 doppio = false;
 
 //show_debug_message(testo);

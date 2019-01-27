@@ -7,14 +7,14 @@ var vh = window_get_height();
 
 draw_set_color(c_black);
 draw_set_alpha(a);
-draw_rectangle(64, vh - 128, vw - 64, vh, false);
+draw_rectangle(64, vh - 128, vw - 128, vh - 64, false);
 
 draw_set_color(c_white);
 draw_set_alpha(1);
 draw_set_font(font0);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_text(vw * 0.5, vh - 64, testo);
+draw_text(vw * 0.5, vh - 64 - 32, show);
 
 /*if (surface_exists(surf)) {
 	//draw_surface(surf, target.x, target.y);
