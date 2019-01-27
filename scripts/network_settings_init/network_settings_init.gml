@@ -12,7 +12,9 @@ enum Cmd
 	Left,
 	PlayerRequest,
 	PlayerUpdate,
-	Mob
+	Mob,
+	Map
+	
 }
 
 // From client to server
@@ -41,16 +43,24 @@ enum CmdMob {
 	None,
 	Spawn
 }
+
+enum CmdMap{
+	None,
+	SpawnVehicle,
+}
   
 globalvar sendbuffer;
 globalvar player_list;
 globalvar player_map;
 
+globalvar vehicle_map;
+globalvar vehicle_list;
+
 globalvar mob_list;
 globalvar mob_map;
 globalvar mob_next_id;
 globalvar mobtype;
-
+globalvar vehicle_next_id;
 globalvar queue_damage_mob;
 globalvar queue_velocity_change;
 
@@ -58,9 +68,13 @@ sendbuffer = buffer_create(256, buffer_grow, 1);
 player_list = ds_list_create();
 player_map = ds_map_create();
 
+vehicle_list = ds_list_create();
+vehicle_map = ds_map_create();
+
 mob_list = ds_list_create();
 mob_map = ds_map_create();
 mob_next_id = 0;
+vehicle_next_id = 0;
 mobtype[0] = obj_mob_ciccino_host;
 
 #macro buffer_gameid buffer_s8

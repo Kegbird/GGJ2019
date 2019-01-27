@@ -1,5 +1,5 @@
 
-image_angle = direction;
+image_angle = direction - 90;
 
 
 if (delay > 0)
@@ -22,9 +22,9 @@ if (active) {
 
 	var k_up = keyboard_check(global.k_up), k_do = keyboard_check(global.k_down);
 	var collision = (collision_line(x, y, 
-		x + lengthdir_x(sprite_width * 0.5 + abs(speed), direction + (spd > 0 || k_up ? 0 : 180)), 
-		y + lengthdir_y(sprite_width * 0.5 + abs(speed), direction + (spd > 0 || k_up ? 0 : 180)), 
-		obj_solid, true, false));
+		x + lengthdir_x(sprite_height * 0.5 + abs(speed), direction + (spd > 0 || k_up ? 0 : 180)), 
+		y + lengthdir_y(sprite_height * 0.5 + abs(speed), direction + (spd > 0 || k_up ? 0 : 180)), 
+		obj_solid, true, true));
 	
 	if (!collision) {
 		if (k_up) {
@@ -69,3 +69,5 @@ else {
 	if (spd < 0) spd += 0.1;
 	speed = spd;
 }
+
+update_depth_jak();

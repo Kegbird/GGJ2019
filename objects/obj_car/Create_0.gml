@@ -1,3 +1,5 @@
+ 
+	vehicleid = -1;
 active = false;
 type = 1;
 direction = irandom(359);

@@ -99,6 +99,57 @@ switch (cmd)
 		b.direction = fire_dir;
 	break;
 	
+	case CmdPlayerUpdate.TakeVehicle:
+		var vehicleid = buffer_read(buff, buffer_gameid); 
+		var playerid = buffer_read(buff, buffer_gameid);
+		
+		var vehicle = vehicle_map[? vehicleid];  
+		vehicle.active = true;
+		
+		if(obj_player.playerid == playerid)
+		{
+			//enter vehicle	
+			obj_player.active = false;
+			obj_player.target = vehicle;
+		}
+		else
+		{
+			var player = player_map[? playerid];
+			with(player)
+			{ 
+				active = false;
+				target = vehicle;
+			}
+			
+		}
+		
+	break;
+	
+	case CmdPlayerUpdate.LeftVehicle:
+		var vehicleid = buffer_read(buff, buffer_gameid); 
+		var playerid = buffer_read(buff, buffer_gameid);
+		
+		var vehicle = vehicle_map[? vehicleid];  
+		vehicle.active = false;
+		
+		if(obj_player.playerid == playerid)
+		{
+			//exit vehicle	
+			obj_player.active = true;
+			obj_player.target = noone;
+		}
+		else
+		{
+			var player = player_map[? playerid];
+			with(player)
+			{ 
+				active = true;
+				target = noone;
+			}
+		}
+		
+	break;
+	
 	default:
 		show_message("msg_client_user received cmd: " + string(cmd));
 	break;

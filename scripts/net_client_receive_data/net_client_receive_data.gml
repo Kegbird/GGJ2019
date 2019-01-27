@@ -1,7 +1,7 @@
  
 var map = argument0;
 
-var buff = map[? "buffer"]; 
+var buff = map[? "buffer"];
 var cmd = buffer_read(buff, buffer_cmd);
 switch (cmd)
 {
@@ -27,6 +27,9 @@ switch (cmd)
 	
 	case Cmd.Mob:
 		msg_mob_user();
+	break;
+	case Cmd.Map:
+		msg_map_client();
 	break;
 	
 	default:

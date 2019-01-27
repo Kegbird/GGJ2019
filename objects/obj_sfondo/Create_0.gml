@@ -1,3 +1,6 @@
+
+
+
 depth = 1;
 global.world_angle = 50;
 global.cam_distance = 200;
@@ -18,3 +21,7 @@ global.d3dPrimVF=vertex_format_end();
 
 general_load_all_3D_models();
 
+if (global.server) {
+	instance_destroy();
+	exit;
+}

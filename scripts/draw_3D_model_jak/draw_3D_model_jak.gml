@@ -17,7 +17,7 @@ mtx = mat4_rotate_z(mtx, image_angle+180);
 mtx = mat4_translate(mtx, x, y, 0);
 matrix_set(matrix_world, mtx);
 
-vertex_submit(argument0, pr_trianglelist, argument1);
+vertex_submit(argument[0], pr_trianglelist, argument[1]);
 
 matrix_set(matrix_world, mat4_identity());
 gpu_set_cullmode(cull_noculling);

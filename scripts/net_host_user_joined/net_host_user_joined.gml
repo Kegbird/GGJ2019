@@ -8,7 +8,7 @@ if(ds_list_size(player_list) < max_players)
 	ds_list_add(socket_list, sock);
 	
 	var point = calculate_spawnpoint();
-	var player = instance_create_depth(point[0], point[1], 0, obj_player_host);
+	var player = instance_create_depth(point[0], point[1], 0, obj_player);
 	player.playerid = players_game_id++;
 	player.sid = sock;
 	ds_list_add(player_list, player);
@@ -38,8 +38,8 @@ if(ds_list_size(player_list) < max_players)
 		buffer_write(sendbuffer, buffer_f32, player_list[| i].old_xspd);
 		buffer_write(sendbuffer, buffer_f32, player_list[| i].old_yspd);
 	}
-	size = ds_list_size(mob_list);
 	// Add all mobs coordinates
+	size = ds_list_size(mob_list);
 	buffer_write(sendbuffer, buffer_u8, size);
 	for (var i = 0; i < size; i++) {
 		buffer_write(sendbuffer, buffer_u8, mob_list[| i].type);
@@ -48,6 +48,16 @@ if(ds_list_size(player_list) < max_players)
 		buffer_write(sendbuffer, buffer_u16, floor(mob_list[| i].x));
 		buffer_write(sendbuffer, buffer_u16, floor(mob_list[| i].y));
 	}
+	
+	// Add all vehicles coordinates
+	size = ds_list_size(vehicle_list);
+	buffer_write(sendbuffer, buffer_u8, size);
+	for (var i = 0; i < size; i++) { 
+		buffer_write(sendbuffer, buffer_gameid, vehicle_list[| i].vehicleid); 
+		buffer_write(sendbuffer, buffer_u16, floor(vehicle_list[| i].x));
+		buffer_write(sendbuffer, buffer_u16, floor(vehicle_list[| i].y));
+	}
+	
 	
 	net_host_send(sock);
 	 
