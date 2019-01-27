@@ -35,6 +35,8 @@ switch (cmd)
 		for (var i = 0; i < size; i++)
 		{
 			var vehicleid = buffer_read(buff, buffer_gameid);
+			
+			show_debug_message("msg_client_user: vehicleid: " + vehicleid);
 			//show_debug_message("Velocity change for car: " + string(playerid));
 			var xSpd = buffer_read(buff, buffer_f32);
 			var ySpd = buffer_read(buff, buffer_f32);
@@ -91,6 +93,8 @@ switch (cmd)
 		for (var i = 0; i < size; i++)
 		{
 			var vehicleid = buffer_read(buff, buffer_gameid);
+			
+			show_debug_message("msg_client_user (97): vehicleid: " + string(vehicleid));
 			var px = buffer_read(buff, buffer_u32);
 			var py = buffer_read(buff, buffer_u32);
 			var inst = instance_create_depth(px, py, 0, obj_car);
@@ -151,13 +155,13 @@ switch (cmd)
 		var playerid = buffer_read(buff, buffer_gameid);
 		var vehicleid = buffer_read(buff, buffer_gameid); 
 		
-		var vehicle = vehicle_map[? vehicleid];  
-		vehicle.active = true;
+		var vehicle = vehicle_map[? vehicleid];
 		
 		if(obj_player.playerid == playerid)
 		{
 			show_debug_message("entering vehicle " + string(vehicleid) + string(object_get_name(vehicle.object_index)));
-			//enter vehicle	
+			//enter vehicle	  
+			vehicle.active = true;
 			obj_player.active = false;
 			obj_player.target = vehicle;
 		}
@@ -165,34 +169,30 @@ switch (cmd)
 		{
 			show_debug_message("other player entering vehicle");
 			var player = player_map[? playerid]; 
-			player.active = false;
-			player.target = vehicle;   
+			player.visible = false; 
 		}
 		
 	break;
 	
-	case CmdPlayerUpdate.LeftVehicle:	
-	
-		
+	case CmdPlayerUpdate.LeftVehicle:
 		var playerid = buffer_read(buff, buffer_gameid); 
 		var vehicleid = buffer_read(buff, buffer_gameid); 
 		
-		var vehicle = vehicle_map[? vehicleid];  
-		vehicle.active = false;
+		var vehicle = vehicle_map[? vehicleid]; 
 		
 		if(obj_player.playerid == playerid)
 		{
-			show_debug_message("leaving vehicle");
+			show_debug_message("leaving vehicle " + string(vehicleid)) ;
 			//exit vehicle	
 			obj_player.active = true;
-			obj_player.target = noone;
+			obj_player.target = noone; 
+			vehicle.active = false;
 		}
 		else
 		{
 			show_debug_message("other player leaving vehicle");
-			var player = player_map[? playerid]; 
-			player.active = true;
-			player.target = noone; 
+			var player = player_map[? playerid];   
+			player.visible = true; 
 		}
 		
 	break;
