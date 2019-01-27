@@ -100,52 +100,51 @@ switch (cmd)
 	break;
 	
 	case CmdPlayerUpdate.TakeVehicle:
-		var vehicleid = buffer_read(buff, buffer_gameid); 
 		var playerid = buffer_read(buff, buffer_gameid);
+		var vehicleid = buffer_read(buff, buffer_gameid); 
 		
 		var vehicle = vehicle_map[? vehicleid];  
 		vehicle.active = true;
 		
 		if(obj_player.playerid == playerid)
 		{
+			show_debug_message("entering vehicle");
 			//enter vehicle	
 			obj_player.active = false;
 			obj_player.target = vehicle;
 		}
 		else
 		{
-			var player = player_map[? playerid];
-			with(player)
-			{ 
-				active = false;
-				target = vehicle;
-			}
-			
+			show_debug_message("other player entering vehicle");
+			var player = player_map[? playerid]; 
+			player.active = false;
+			player.target = vehicle;   
 		}
 		
 	break;
 	
-	case CmdPlayerUpdate.LeftVehicle:
+	case CmdPlayerUpdate.LeftVehicle:	
+	
+		
+		var playerid = buffer_read(buff, buffer_gameid); 
 		var vehicleid = buffer_read(buff, buffer_gameid); 
-		var playerid = buffer_read(buff, buffer_gameid);
 		
 		var vehicle = vehicle_map[? vehicleid];  
 		vehicle.active = false;
 		
 		if(obj_player.playerid == playerid)
 		{
+			show_debug_message("leaving vehicle");
 			//exit vehicle	
 			obj_player.active = true;
 			obj_player.target = noone;
 		}
 		else
 		{
-			var player = player_map[? playerid];
-			with(player)
-			{ 
-				active = true;
-				target = noone;
-			}
+			show_debug_message("other player leaving vehicle");
+			var player = player_map[? playerid]; 
+			player.active = true;
+			player.target = noone; 
 		}
 		
 	break;

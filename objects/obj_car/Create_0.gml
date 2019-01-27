@@ -1,9 +1,6 @@
- 
-	vehicleid = -1;
+vehicleid = -1;
 active = false;
-type = 1;
-direction = irandom(359);
-
+type = 1; 
 xSpd = 0;
 ySpd = 0;
 

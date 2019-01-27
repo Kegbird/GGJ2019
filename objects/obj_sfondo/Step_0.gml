@@ -1,3 +1,6 @@
+if(!instance_exists(obj_player))
+	exit;
+
 if (tempo_scorrimento == 1)
 {
 	global.world_angle = world_angle_set;

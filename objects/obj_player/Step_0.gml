@@ -84,10 +84,13 @@ if (active) {
 			if (car && !car.active) {
 				active = false;
 				target = car;
-				target.active = true;
+				car.active = true;
 				write_begin(Cmd.PlayerUpdate);
 				buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.TakeVehicle); 
-				net_host_send(sockid);
+				buffer_write(sendbuffer, buffer_gameid, playerid); 
+				buffer_write(sendbuffer, buffer_gameid, car.vehicleid); 
+				net_host_send_all();
+				show_debug_message("entering vehicle");
 				
 			}
 		}
@@ -95,23 +98,33 @@ if (active) {
 	
 } 
 else {
-	x = target.x;
-	y = target.y;
+	
 	if (global.server  && k_action) {
+		
+		write_begin(Cmd.PlayerUpdate);
+		buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.LeftVehicle); 
+		buffer_write(sendbuffer, buffer_gameid, playerid); 
+		buffer_write(sendbuffer, buffer_gameid, target.vehicleid); 
+		net_host_send_all();
+		show_debug_message("leaving vehicle");
 		visible = true;
 		active = true;
 		target.active = false;
-		target = id;
-		write_begin(Cmd.PlayerUpdate);
-		buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.LeftVehicle); 
-		net_host_send(sockid);
+		target = noone;
 				
 	}
-	else 
-		visible = false;
+	//else 
+	//	visible = false;
 	
 }
 
+if(target != noone)
+{
+	show_debug_message(string(x) + "," + string(y));
+	x = target.x;
+	y = target.y;
+}
+	
 if(!global.server)
 {
 	update_depth_jak();
@@ -127,7 +140,6 @@ if(!global.server)
 	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_action) ? 1 : (keyboard_check_released(global.k_action) ? -1 : 0));
 	buffer_write(sendbuffer, buffer_s8, mouse_check_button_pressed(global.k_fire) ? 1 : (mouse_check_button_released(global.k_fire) ? -1 : 0));
 	buffer_write(sendbuffer, buffer_u16, floor(fire_dir));
-
 
 	net_client_send();
 

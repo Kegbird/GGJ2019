@@ -10,7 +10,7 @@ enum Key {
 
 // vars
 active = true;
-target = id;
+target = noone;
 velocity = 1.2;
 spd = 0;
 dir = 0;
