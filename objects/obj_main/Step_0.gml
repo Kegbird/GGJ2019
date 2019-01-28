@@ -22,7 +22,7 @@ if (state == 0)
 	}
 
 	//top secret host
-	if (keyboard_check_released(ord("H")))
+	if (keyboard_check_released(ord("H")) || window_get_caption() == "server")
 	{
 		global.server = true;
 		instance_create_depth(0, 0, 0, obj_host); 

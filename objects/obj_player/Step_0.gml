@@ -11,7 +11,8 @@ if(!global.server)
 	//fire_dir = 0;
 }
 
-if (active) {
+if (active)
+{
 	 
 	visible = true;
 	//fire_dir = point_direction(x, y, global.aim_xdir, global.aim_ydir);
@@ -42,7 +43,8 @@ if (active) {
 		xCor += velocity;
 	}
 	
-	var xFinal = (xSpd + xCor) * 0.5, yFinal = (ySpd + yCor) * 0.5;
+	var xFinal = (xSpd + xCor) * 0.5;
+	var yFinal = (ySpd + yCor) * 0.5;
 	
 	spd = point_distance(x, y, x + xFinal, y + yFinal);
 	dir = point_direction(x, y, x + xFinal, y + yFinal);
@@ -71,8 +73,10 @@ if (active) {
 		var ist = instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_bull);
 		if (!global.server)
 		{
-			/*ist.hspeed = global.aim_xdir;
-			ist.vspeed = global.aim_ydir;*/
+			/*
+			ist.hspeed = global.aim_xdir;
+			ist.vspeed = global.aim_ydir;
+			*/
 	 
 			fire_dir = point_direction(0, 0, global.aim_xdir, global.aim_ydir);
 			show_debug_message(string(fire_dir));
@@ -87,17 +91,18 @@ if (active) {
 	if(global.server)
 	{
 			
-		if (old_xspd != xSpd || old_yspd != ySpd) 
+		if (old_xspd != xFinal || old_yspd != yFinal) 
 			ds_queue_enqueue(queue_velocity_change, id);
 	
-		old_xspd = xSpd;
-		old_yspd = ySpd;
+		old_xspd = xFinal;
+		old_yspd = yFinal;
 		
-		if(k_action == Key.Pressed) {
-			
+		if(k_action == Key.Pressed)
+		{
 			k_action =  Key.Idle;
 			var car = collision_circle(x, y, 16, obj_car, 0, 1);
-			if (car && !car.active) {
+			if (car && !car.active) 
+			{
 				active = false;
 				target = car;
 				car.active = true;
@@ -107,19 +112,20 @@ if (active) {
 				buffer_write(sendbuffer, buffer_gameid, car.vehicleid); 
 				net_host_send_all();
 				show_debug_message("entering vehicle  " + string(car.vehicleid));
-				
 			}
-			
 		}
 	}
-	else {
-		if (keyboard_check_pressed(global.k_action)) {
+	else 
+	{
+		if (keyboard_check_pressed(global.k_action)) 
+		{
 			scr_interact_message(self.id);	
 		}
 	}
 	
 } 
-else {
+else 
+{
 	
 	if (global.server  && k_action == Key.Pressed) 
 	{

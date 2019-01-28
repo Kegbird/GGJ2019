@@ -50,8 +50,9 @@ switch (cmd)
 		 
 	break;
 	
-	case CmdPlayerUpdate.Sync:		// Megapack
+	case CmdPlayerUpdate.Sync:
 		
+		//sync player positions
 		var size = buffer_read(buff, buffer_u8);
 		for (var i = 0; i < size; i++)
 		{
@@ -61,7 +62,8 @@ switch (cmd)
 			var y_coord = buffer_read(buff, buffer_u16);
 			var xSpd = buffer_read(buff, buffer_f32);
 			var ySpd = buffer_read(buff, buffer_f32);
-			if (playerid != obj_player.playerid) {
+			if (playerid != obj_player.playerid)
+			{
 				var player = instance_create_depth(0, 0, 0, obj_player_other);
 				ds_list_add(player_list, player);
 				player_map[? playerid] = player;
@@ -74,6 +76,7 @@ switch (cmd)
 				player.ySpd = ySpd;
 			}
 		}
+		//sync mobs
 		size = buffer_read(buff, buffer_u8);
 		show_debug_message("MOBS : " + string(size));
 		for (var i = 0; i < size; i++)
@@ -100,11 +103,8 @@ switch (cmd)
 			var inst = instance_create_depth(px, py, 0, obj_car);
 			inst.vehicleid = vehicleid;
 			ds_list_add(vehicle_list, inst);
-			vehicle_map[? vehicleid] = inst; 
-			
+			vehicle_map[? vehicleid] = inst;			
 		}
-		
-		
 	break;
 	
 	case CmdPlayerUpdate.Position:
@@ -114,7 +114,8 @@ switch (cmd)
 			var playerid = buffer_read(buff, buffer_gameid);
 			var x_coord = buffer_read(buff, buffer_u16);
 			var y_coord = buffer_read(buff, buffer_u16);
-			if (playerid == obj_player.playerid) {
+			if (playerid == obj_player.playerid)
+			{
 				obj_player.x = x_coord;
 				obj_player.y = y_coord;
 			}
@@ -159,7 +160,7 @@ switch (cmd)
 		
 		if(obj_player.playerid == playerid)
 		{
-			show_debug_message("entering vehicle " + string(vehicleid) + string(object_get_name(vehicle.object_index)));
+			show_debug_message("entering vehicle " + string(vehicleid)  + " " + string(object_get_name(vehicle.object_index)));
 			//enter vehicle	  
 			vehicle.active = true;
 			obj_player.active = false;
@@ -167,7 +168,7 @@ switch (cmd)
 		}
 		else
 		{
-			show_debug_message("other player entering vehicle");
+			show_debug_message("other player entering vehicle " + string(vehicleid) + " " + string(object_get_name(vehicle.object_index)));
 			var player = player_map[? playerid]; 
 			player.visible = false; 
 		}
@@ -190,7 +191,7 @@ switch (cmd)
 		}
 		else
 		{
-			show_debug_message("other player leaving vehicle");
+			show_debug_message("other player leaving vehicle " + string(vehicleid));
 			var player = player_map[? playerid];   
 			player.visible = true; 
 		}

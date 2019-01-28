@@ -11,7 +11,7 @@ enum Key {
 // vars
 active = true;
 target = noone;
-velocity = 1.2;
+velocity = 3;
 spd = 0;
 dir = 0;
 delay = 0;

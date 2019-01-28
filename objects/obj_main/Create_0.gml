@@ -25,3 +25,4 @@ cursor = "|";
 text_max_len = 60;
 text_max_width = 128;
 alarm[0] = 30;
+alarm[1] = 5;

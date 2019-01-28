@@ -15,6 +15,7 @@ mtx = mat4_translate(mtx, argument0, argument1, argument4);
 
 matrix_set(matrix_world, mtx);
 gpu_set_alphatestenable(false);
+draw_set_halign(fa_center);
 draw_text(0, 0, argument2);
 gpu_set_alphatestenable(true);
 matrix_set(matrix_world, mat4_identity());
