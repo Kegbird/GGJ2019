@@ -15,12 +15,14 @@ switch (cmd)
 				return;
 			}
 			player.username = buffer_read(buff, buffer_string);
+			player.text = buffer_read(buff, buffer_string);
 			
 			//send username change
 			write_begin(Cmd.PlayerUpdate);
 			buffer_write(sendbuffer, buffer_cmd, CmdPlayerUpdate.Name);
 			buffer_write(sendbuffer, buffer_gameid, player.playerid);
 			buffer_write(sendbuffer, buffer_string, player.username);
+			buffer_write(sendbuffer, buffer_string, player.text);
 			net_host_send_all_except (sid);
 		}
 		else

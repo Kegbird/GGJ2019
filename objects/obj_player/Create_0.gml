@@ -2,6 +2,7 @@
 playerid = -1;
 sockid = -1;
 username = "unknown"; 
+text = "per me casa significa collaborazione";
 enum Key {
 	Released = -1,
 	Idle = 0,

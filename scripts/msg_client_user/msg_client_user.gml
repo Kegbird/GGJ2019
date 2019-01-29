@@ -5,8 +5,11 @@ switch (cmd)
 	case CmdPlayerUpdate.Name: 
 		var playerid = buffer_read(buff, buffer_gameid);
 		var player = player_map[? playerid];
-		if(instance_exists(player)) 
+		if(player != undefined && player != noone)
+		{
 			player.username = buffer_read(buff, buffer_string);	 
+			player.text = buffer_read(buff, buffer_string);	 
+		}
 		else
 			show_message("client: can't find player");
 	break;
@@ -58,6 +61,8 @@ switch (cmd)
 		for (var i = 0; i < size; i++)
 		{
 			var playerid = buffer_read(buff, buffer_gameid);
+			var username = buffer_read(buff, buffer_string);
+			var text = buffer_read(buff, buffer_string);
 			var vis = buffer_read(buff, buffer_u8);
 			var x_coord = buffer_read(buff, buffer_u16);
 			var y_coord = buffer_read(buff, buffer_u16);
@@ -69,6 +74,8 @@ switch (cmd)
 				ds_list_add(player_list, player);
 				player_map[? playerid] = player;
 				player.playerid = playerid;
+				player.username = username;
+				player.text = text;
 				player.active = vis;
 				player.visible = vis; 
 				player.x = x_coord;
@@ -77,6 +84,7 @@ switch (cmd)
 				player.ySpd = ySpd;
 			}
 		}
+		
 		//sync mobs
 		size = buffer_read(buff, buffer_u8);
 		show_debug_message("MOBS : " + string(size));

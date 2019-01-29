@@ -9,9 +9,9 @@ surf = -1;
 
 // settings
 font = font0;
-delay_text = 1.2 * room_speed;
-fade_in_velocity = 0.7;
-fade_out_velocity = 0.4;
+delay_text = 0.1 * room_speed;
+fade_in_velocity = 2.7;
+fade_out_velocity = 2.7;
 
 
 // misc

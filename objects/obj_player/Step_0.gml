@@ -124,7 +124,7 @@ if (active)
 	{
 		if (keyboard_check_pressed(global.k_action)) 
 		{
-			scr_interact_message(self.id);	
+			scr_interact_message();	
 		}
 	}
 	

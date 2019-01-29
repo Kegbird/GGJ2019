@@ -66,6 +66,7 @@ globalvar mob_map;
 globalvar mob_next_id;
 globalvar mobtype;
 globalvar vehicle_next_id;
+globalvar queue_bullet;
 globalvar queue_damage_mob;
 globalvar queue_velocity_change;
 globalvar queue_velocity_change_car;
@@ -86,6 +87,7 @@ mobtype[0] = obj_mob_ciccino_host;
 #macro buffer_gameid buffer_s8
 #macro buffer_cmd buffer_u8
 
+queue_bullet = ds_queue_create();
 queue_damage_mob = ds_queue_create();
 queue_velocity_change = ds_queue_create();
 queue_velocity_change_car = ds_queue_create();

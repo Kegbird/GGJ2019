@@ -11,12 +11,14 @@ if (stage != 5) {
 	}
 }
 
-if (stage == 0) {
+if (stage == 0)
+{
 	// divide il testo in righe (cerca di fare righe di lungh. simile)
 	draw_set_font(font);
 	var len = string_length(testo), w = string_width(testo);
 	
-	if (w > boxw) {
+	if (w > boxw)
+	{
 		doppio = true;
 		var line = "", line2 = false;
 		for (var i=1; i<string_length(testo); i++) {

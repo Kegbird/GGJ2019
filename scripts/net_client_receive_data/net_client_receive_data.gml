@@ -28,6 +28,7 @@ switch (cmd)
 	case Cmd.Mob:
 		msg_mob_user();
 	break;
+	
 	case Cmd.Map:
 		msg_map_client();
 	break;
