@@ -1,8 +1,6 @@
 vehicleid = -1;
 active = false;
-type = 1; 
-xSpd = 0;
-ySpd = 0;
+type = 1;  
 
 
 spd = 0;
@@ -26,5 +24,6 @@ k_fire = false;
 k_action = false;
 fire_dir = 0;
 
-old_xspd = 0;
-old_yspd = 0;
+
+old_direction = direction;
+old_speed = speed;

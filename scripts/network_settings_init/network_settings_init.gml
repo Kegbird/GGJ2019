@@ -23,7 +23,8 @@ enum CmdPlayerRequest
 	None,
 	Name,
 	Input,
-	InputVehicle
+	InputVehicle,
+	InputAction
 }
 
 // Data update sent from server to client 

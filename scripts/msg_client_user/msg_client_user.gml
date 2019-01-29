@@ -36,15 +36,16 @@ switch (cmd)
 		{
 			var vehicleid = buffer_read(buff, buffer_gameid);
 			
-			show_debug_message("msg_client_user: vehicleid: " + vehicleid);
+			show_debug_message("msg_client_user: " + string(vehicleid));
 			//show_debug_message("Velocity change for car: " + string(playerid));
-			var xSpd = buffer_read(buff, buffer_f32);
-			var ySpd = buffer_read(buff, buffer_f32);
+			var spd = buffer_read(buff, buffer_f32);
+			var dir = buffer_read(buff, buffer_f32);
 			var vehicle = vehicle_map[? vehicleid];
 			if (vehicle != undefined && instance_exists(vehicle)) 
 			{ 
-				vehicle.xSpd = xSpd;
-				vehicle.ySpd = ySpd;
+				vehicle.speed = spd;
+				vehicle.spd = spd;
+				vehicle.direction = dir;
 			}
 		}
 		 
@@ -112,8 +113,8 @@ switch (cmd)
 		for (var i = 0; i < size; i++)
 		{
 			var playerid = buffer_read(buff, buffer_gameid);
-			var x_coord = buffer_read(buff, buffer_u16);
-			var y_coord = buffer_read(buff, buffer_u16);
+			var x_coord = buffer_read(buff, buffer_f32);
+			var y_coord = buffer_read(buff, buffer_f32);
 			if (playerid == obj_player.playerid)
 			{
 				obj_player.x = x_coord;
@@ -127,19 +128,19 @@ switch (cmd)
 			}
 		}
 		
-		//var size = buffer_read(buff, buffer_u8);
-		//for (var i = 0; i < size; i++)
-		//{
-		//	var vehicleid = buffer_read(buff, buffer_gameid);
-		//	var x_coord = buffer_read(buff, buffer_u16);
-		//	var y_coord = buffer_read(buff, buffer_u16);
-		//	var angle = buffer_read(buff, buffer_u16);
+		var size = buffer_read(buff, buffer_u8);
+		for (var i = 0; i < size; i++)
+		{
+			var vehicleid = buffer_read(buff, buffer_gameid);
+			var x_coord = buffer_read(buff, buffer_f32);
+			var y_coord = buffer_read(buff, buffer_f32);
+			var angle = buffer_read(buff, buffer_f32);
 			  
-		//	var v = vehicle_map[? vehicleid];
-		//	v.x = x_coord;
-		//	v.y = y_coord; 
-		//	v.direction = angle; 
-		//}
+			var v = vehicle_map[? vehicleid];
+			v.x = x_coord;
+			v.y = y_coord; 
+			v.direction = angle; 
+		}
 	break;
 	
 	case CmdPlayerUpdate.Fire:

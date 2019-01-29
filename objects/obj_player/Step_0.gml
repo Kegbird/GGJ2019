@@ -55,7 +55,8 @@ if (active)
 		y += yFinal;
 	}
 	
-	if (abs(spd) < 0.1) {
+	if (abs(spd) < 0.1) 
+	{
 		image_speed = 0;
 		image_index = 0;
 	}
@@ -66,6 +67,9 @@ if (active)
 	
 	if(!global.server) 
 		scr_player_animation(spd);
+	else
+		sprite_index = spr_player;
+		
 	if (k_fire && delay <= 0) 
 	{
 		delay = delay_max;
@@ -111,10 +115,11 @@ if (active)
 				buffer_write(sendbuffer, buffer_gameid, playerid); 
 				buffer_write(sendbuffer, buffer_gameid, car.vehicleid); 
 				net_host_send_all();
-				show_debug_message("entering vehicle  " + string(car.vehicleid));
+				show_debug_message("Entering vehicle " + string(car.vehicleid));
 			}
 		}
 	}
+	//dialoga
 	else 
 	{
 		if (keyboard_check_pressed(global.k_action)) 
@@ -123,6 +128,26 @@ if (active)
 		}
 	}
 	
+	if(!global.server)
+	{
+		//invia dati movimento
+
+		write_begin(Cmd.PlayerRequest);
+		buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);
+		buffer_write(sendbuffer, buffer_gameid, playerid);
+		buffer_write(sendbuffer, buffer_s8, keyboard_check_released(global.k_up) ? -1 : (keyboard_check_pressed(global.k_up) ? 1 : 0));
+		buffer_write(sendbuffer, buffer_s8, keyboard_check_released(global.k_left) ? -1 : (keyboard_check_pressed(global.k_left) ? 1 : 0));
+		buffer_write(sendbuffer, buffer_s8, keyboard_check_released(global.k_down) ? -1 : (keyboard_check_pressed(global.k_down) ? 1 : 0));
+		buffer_write(sendbuffer, buffer_s8, keyboard_check_released(global.k_right) ? -1 : (keyboard_check_pressed(global.k_right) ? 1 : 0));
+		//buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_action));
+		//buffer_write(sendbuffer, buffer_s8, mouse_check_button_released(global.k_fire) ? -1 : (mouse_check_button_pressed(global.k_fire) ? 1 : 0));
+		//buffer_write(sendbuffer, buffer_u16, floor(fire_dir));
+
+		net_client_send();
+
+		update_aim();
+	}
+
 } 
 else 
 {
@@ -135,12 +160,11 @@ else
 		buffer_write(sendbuffer, buffer_gameid, playerid); 
 		buffer_write(sendbuffer, buffer_gameid, target.vehicleid); 
 		net_host_send_all();
-		show_debug_message("leaving vehicle");
+		show_debug_message("player " + string(playerid) + " leaving vehicle " + string(target.vehicleid));
 		visible = true;
 		active = true;
 		target.active = false;
 		target = noone;
-				
 	}
 	else 
 		visible = false;
@@ -153,23 +177,16 @@ if(target != noone)
 }
 	
 	
+//action button
 if(!global.server)
 {
-	update_depth_jak();
-	//invia dati movimento
-
-	write_begin(Cmd.PlayerRequest);
-	buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.Input);
-	buffer_write(sendbuffer, buffer_gameid, playerid);
-	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_up) ? 1 : (keyboard_check_released(global.k_up) ? -1 : 0));
-	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_left) ? 1 : (keyboard_check_released(global.k_left) ? -1 : 0));
-	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_down) ? 1 : (keyboard_check_released(global.k_down) ? -1 : 0));
-	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_right) ? 1 : (keyboard_check_released(global.k_right) ? -1 : 0));
-	buffer_write(sendbuffer, buffer_s8, keyboard_check_pressed(global.k_action));
-	buffer_write(sendbuffer, buffer_s8, mouse_check_button_pressed(global.k_fire) ? 1 : (mouse_check_button_released(global.k_fire) ? -1 : 0));
-	buffer_write(sendbuffer, buffer_u16, floor(fire_dir));
-
-	net_client_send();
-
-	update_aim();
+	if(keyboard_check_pressed(global.k_action))
+	{
+		write_begin(Cmd.PlayerRequest);
+		buffer_write(sendbuffer, buffer_cmd, CmdPlayerRequest.InputAction);
+		buffer_write(sendbuffer, buffer_gameid, playerid); 
+		net_client_send();
+	}
 }
+	
+update_depth_jak();
